@@ -1,0 +1,22 @@
+<!--2.Create a lightning component to perform  math operations based on user choice .-->
+<template>
+    <h1>day69H2</h1>
+    <lightning-card title="Add Number Example">
+        <lightning-button label="new" slot="actions"></lightning-button>
+        <div class="slds-var-m-around_medium">
+            <lightning-input label="Enter First Number" onchange={handleChange1} value={FirstNumber} name="fnumber"></lightning-input>
+
+            </div>
+            <div class="slds-var-m-around_medium">
+                <lightning-input label="Enter second Number" onchange={handleChange2} value={SecondNumber} name="snumber"></lightning-input>
+    
+            </div>
+            <div class="slds-var-m-around_medium">
+                <lightning-button variant="brand"  label="Add" onclick={addHandler}></lightning-button>&nbsp;
+                <lightning-button variant="brand"  label="Sub" onclick={subHandler}></lightning-button>&nbsp;
+                <lightning-button variant="brand"  label="Mul" onclick={mulHandler}></lightning-button>&nbsp;
+                <lightning-button variant="brand"  label="Div" onclick={divHandler}></lightning-button>
+            </div>
+                Result  of {FirstNumber} and {SecondNumber} is {result}
+    </lightning-card>
+</template>

@@ -1,0 +1,16 @@
+<apex:page controller="WizardClass">
+    <apex:form >
+        <apex:pageBlock title="Enter Opportunity Details">
+            <apex:commandButton value="Go To Account Page" action="{!gotopage1}"/>
+            <apex:commandButton value="Go To Contact Page" action="{!gotopage2}"/>
+            <apex:commandButton value="Review Page" action="{!gotopage4}"/>
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!o.Name}"/>
+                <apex:inputField value="{!o.Type}"/>
+                <apex:inputField value="{!o.StageName}"/>
+                <apex:inputField value="{!o.CloseDate}"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

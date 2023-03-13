@@ -1,0 +1,17 @@
+<apex:page controller="WizardClass">
+    <apex:form >
+        <apex:pageBlock title="Enter Account Details">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Go To Contact Page" action="{!gotopage2}" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!a.name}"/>
+                <apex:inputField value="{!a.industry}"/>
+                <apex:inputField value="{!a.phone}"/>
+                <apex:inputField value="{!a.Active__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+        
+</apex:page>

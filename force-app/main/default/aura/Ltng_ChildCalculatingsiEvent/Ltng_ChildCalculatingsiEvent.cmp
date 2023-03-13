@@ -1,0 +1,15 @@
+<aura:component >
+        <aura:registerEvent name="reginChild" type="c:Ltng_CalculatingsiEvent"/>
+        
+        <aura:attribute name='amount' type="integer"  />
+        <aura:attribute name='roi' type="integer" />
+        <aura:attribute name='noofyears' type="integer" />
+        <aura:attribute name="si" type="integer" />
+    
+        
+            <lightning:input name="amount" label="principal amount " required="true" value="{!v.amount}"/>
+            <lightning:input name="roi" label="rate of intrest" required="true" value="{!v.roi}"/>
+            <lightning:input name="no of month" label="No of month"  required="true" value="{!v.noofyears}"/>
+            <lightning:button variant="success" label="Calculatesimpinterst"  onclick="{!c.calintrest}"/>
+        
+    </aura:component>

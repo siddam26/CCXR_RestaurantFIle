@@ -1,0 +1,58 @@
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+.THIS .header-column {
+    padding: 0 2rem;
+}
+.THIS .field-title {
+    font-size: .75rem;
+    line-height: 1.25;
+    color: #54698d;
+    margin-bottom: .25rem;
+}
+
+/*2*/
+.THIS.c-container2 
+{
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+
+.THIS .custom-box2 
+{
+    text-align: center;
+    background-color: #f4f6f9;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+}
+
+/*3*/
+.THIS.c-container3 {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+.THIS .large3 {
+    height: 200px;
+}
+.THIS .x-large3 {
+    height: 300px;
+}
+.THIS .custom-box3 {
+    text-align: center;
+    background-color: #f4f6f9;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+}
+/*4*/
+.THIS.c-container4 {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+
+.THIS .custom-box4 {
+    text-align: center;
+    background-color: #f4f6f9;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+}

@@ -1,0 +1,16 @@
+<apex:page standardController="Position__c">
+    <apex:tabPanel switchType="Ajax">
+        
+        <apex:tab label="PositionDetail" title="Position Detail">
+        <apex:detail relatedList="false"/>
+        </apex:tab>
+        
+        <apex:tab label="JA Data" title="job Application Data">
+            <apex:relatedList list="Job_Applications__r"/>
+        </apex:tab>
+        
+        <apex:tab label="JAP Data" title="Job Posting Data">
+            <apex:relatedList list="Job_Postings__r"/>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

@@ -1,0 +1,41 @@
+<aura:component>
+    <div>
+        <lightning:select name="select1" label="How many tickets?" required="true">
+            <option value="">choose one...</option>
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+        </lightning:select>
+    </div>
+    <!--2-->
+    <aura:attribute name="colors" type="String[]" default="Red,Green,Blue"/>
+    
+    <div>
+        <lightning:select name="select" label="Select a Color" required="true">
+            <aura:iteration items="{!v.colors}" var="color">
+                <option text="{!color}" value="{!v.colors}" >    </option>
+                
+            </aura:iteration>
+        </lightning:select>
+    </div>
+    <div>
+        <lightning:select aura:id="select" name="select" label="Select a pie" onchange="{! c.onChange }">
+            <option value="">choose one...</option>
+            <option value="apple">apple</option>
+            <option value="pumpkin">pumpkin</option>
+            <option value="cherry">cherry</option>
+            <option value="blueberry">blueberry</option>
+            <option value="pickle">pickle</option>
+        </lightning:select>
+    </div>
+    <aura:attribute name="options" type="List" />
+    <aura:attribute name="selectedValue" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+    <lightning:select name="colorId" label="Select a color:" aura:id="colorId" value="{!v.selectedValue}">
+        <aura:iteration items="{!v.options}" var="option">
+            <option text="{!option.label}" value="{!option.id}" selected="{!option.selected}"/>
+        </aura:iteration>
+    </lightning:select>
+    
+</aura:component>

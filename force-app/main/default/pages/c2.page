@@ -1,0 +1,11 @@
+<apex:page controller="c2">
+    <font size="4">
+        {!newrec.name}
+        {!newrec.industry}
+        { ! newrec.Phone}<br/>
+        {!existingrec.name}
+        {!existingrec.industry}
+        
+    </font>
+    
+</apex:page>

@@ -1,0 +1,25 @@
+<aura:component controller="reviewcontroller" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="tabledata" type="Review__c[]" />
+    <aura:attribute name="columns" type="list" />
+    <aura:attribute name="selected" type="boolean"/>
+    <aura:attribute name="selectedJAS" type="list"/>
+    <aura:attribute name="url" type="String"/>
+     <aura:attribute name="pageReference" type="Review__c"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    
+    <lightning:datatable
+                         keyField="id"
+                         data="{! v.tabledata }"
+                         columns="{! v.columns }"
+                         hideCheckboxColumn="false"
+                         onrowselection="{!c.showselectedrows}"/>
+    <aura:if isTrue="{!v.selected}">
+        <b>Job Application List</b><br/><br/>
+        <lightning:navigation aura:id="navService"/>
+    <a href="{!v.url}" onclick="{!c.handleClick}">Link</a>
+       
+    </aura:if>
+    
+   
+</aura:component>

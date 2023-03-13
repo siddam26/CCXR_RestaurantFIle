@@ -1,0 +1,23 @@
+<apex:page standardController="Contract" recordSetVar="Contracts" tabStyle="Contract">
+    <apex:form > 
+         <apex:sectionHeader title="Contract Page" subtitle="New Contract Page"/>
+      <b>View :</b>
+        <apex:inputTextarea title="Search" rows="1" cols="30" />
+        <apex:commandButton value="Go!" style="position:relative;left:7px;" /> 
+        <b><apex:commandLink style="position:relative;left:10px;" value="Edit"/></b>
+        <b><apex:commandLink style="position:relative;left:20px;" value="Create New View"/><br/></b>
+        <apex:pageBlock title="Recent View" >
+            <apex:pageBlockTable value="{!Contracts}" var="c">
+                <apex:column value="{!c.ContractNumber}" colspan="1"/>
+                <apex:column value="{!c.Status}"/>
+                <apex:column value="{!c.StartDate}"/>
+                <apex:column value="{!c.EndDate}"/>
+                <apex:column value="{!c.ContractTerm}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Reports" >
+            <b>  <apex:commandLink style="position:relative;left:10px;" value="Go To Report >> "/></b>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

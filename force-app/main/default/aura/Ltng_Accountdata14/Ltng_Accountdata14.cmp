@@ -1,0 +1,11 @@
+<aura:component controller="Ltng_Accountdata14Controller">
+    <aura:attribute name="Accounts" type="list"/>
+    <lightning:button variant="success" label="Display Accounts" title="account" onclick="{!c.getaccounts}"/>
+    Account Information:::
+    <aura:iteration items="{!v.Accounts}" var="accs">
+        account Name::{!accs.Name}<br/>
+        account Industry::{!accs.Industry}<br/>
+        account Phone::{!accs.Phone}
+    </aura:iteration>
+	
+</aura:component>

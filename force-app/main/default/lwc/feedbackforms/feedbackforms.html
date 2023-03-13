@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Feedaback Form">
+        <p class="slds-p-horizontal_small">
+            <lightning-record-form
+                object-api-name={objectApiName}
+                fields={fieldList}
+                onsuccess={handleAccountCreate}>
+            </lightning-record-form>
+
+        </p>
+    </lightning-card>
+</template>

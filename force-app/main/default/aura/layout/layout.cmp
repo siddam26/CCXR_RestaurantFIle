@@ -1,0 +1,112 @@
+<aura:component>
+<p>This example creates a simple layout with field headers.</p>
+    <div class="c-container">
+        <lightning:layout >
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 1">Field 1</p>
+                    <p>Name</p>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field2 (3)">Field 2 (3)
+                        <lightning:buttonIcon iconName="utility:down" variant="border-filled" size="small" alternativeText="More Actions" />
+                    </p>
+                    <p>Eligibility</p>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 3">Field 3</p>
+                    <a href="#">Website</a>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 4">Field 4</p>
+                    <p>
+                        <span title="">Address</span>
+                    </p>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+
+
+<p>The layout items are spaced horizontally across the container, starting and ending with a space using attribute <code>horizontalAlign="space"</code>.</p>
+    <div class="c-container2">
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box2">1</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box2">2</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box2">3</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box2">4</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box2">5</div>
+            </lightning:layoutItem>
+           
+        </lightning:layout>
+    </div>
+
+
+        <p>The layout items are aligned in the center of the container.</p>
+    <div class="c-container3">
+        <lightning:layout verticalAlign="center" class="x-large3">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box3">1</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box3">2</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box3">3</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box3">4</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box">5</div>
+            </lightning:layoutItem>
+            
+        </lightning:layout>
+    </div>
+
+<!--xlarge screens are at least 960dp x 720dp
+
+large screens are at least 640dp x 480dp
+
+normal screens are at least 470dp x 320dp
+
+small screens are at least 426dp x 320dp-->
+
+
+
+
+
+<p>The pullToBoundary attribute pulls the items to each side of the container. 
+ Element 1 and 4 display without padding on their outer edges and go all the way to the edges of the container.</p>
+    <div class="c-container4">
+        <lightning:layout pullToBoundary="medium">
+            <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+                <div class="custom-box4">1</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+                <div class="custom-box4">2</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+                <div class="custom-box4">3</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+                <div class="custom-box4">4</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title=" LWC External Styling Day69H1">
+        <strong>
+            
+                <h2>Hello Form External Styling from h1</h2>
+                <p>Hello Form External Styling from p</p>
+            
+            <div class="myclass">
+                <template for:each={string1}
+                      for:item="strings">
+                    <ol key={strings} class="slds-list_ordered">
+                      <li>{strings}</li>
+                     </ol>
+              </template>
+            </div>
+        </strong>
+    </lightning-card>
+</template>

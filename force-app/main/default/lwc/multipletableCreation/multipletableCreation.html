@@ -1,0 +1,11 @@
+<template>
+    <Lightning-card title="Table Creation">
+        <p class="slds-p-horizontal_small">
+                <lightning-record-form
+                    object-api-name={objectApiName}
+                    fields={fieldList}
+                    onsuccess={handleTableCreate}>
+                </lightning-record-form>
+        </p>
+    </Lightning-card>
+</template>

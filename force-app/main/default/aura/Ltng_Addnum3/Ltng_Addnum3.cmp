@@ -1,0 +1,14 @@
+<aura:component >
+	<aura:attribute name="Fnumber" type="Integer" default="125"/>
+    <aura:attribute name="Snumber" type="Integer" default="120"/>
+    <aura:attribute name="Result" type="Integer"/>
+    <aura:handler name="init" value="{!this}" action="{!c.addnum3}"/>
+    
+     <div>
+       Addition result::<br/>
+       first number:{!v.Fnumber};<br/>
+       Second Number:{!v.Snumber};<br/>
+       Result={!v.Result}
+       
+    </div>
+</aura:component>

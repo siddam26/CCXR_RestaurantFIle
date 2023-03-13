@@ -1,0 +1,79 @@
+<aura:component  >
+    <p>With default attribute values of <code>size</code> and <code>flexibility</code>, layout items take the size of their content and don't occupy the entire width of the container.</p>
+    <div class="c-container">
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box">1</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box">2</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box">3</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="custom-box">4</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+    <p>The layout items below become as wide as necessary to occupy the entire width of the 
+        container with flexibility="auto"</p>
+    <div class="c-container">
+        <lightning:layout>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box">1</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box">2</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box">3</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box">4</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+    
+    <p>The third layout item adds a value of no-grow to the attribute. No space is assigned to that item 
+        in the container beyond the width of the content.</p>
+    <div class="c-container">
+        <lightning:layout>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box">1</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box">2</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto, no-grow" padding="around-small">
+                <div class="custom-box">3</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="custom-box">4</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+    
+<p>These layout items specify <code>padding="horizontal-medium"</code> to give each item medium padding on its left and right sides.</p>
+    <div class="c-container">
+        <lightning:layout>
+            <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+                <div class="custom-box">1</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+                <div class="custom-box">2</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+                <div class="custom-box">3</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+                <div class="custom-box">4</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+
+
+</aura:component>

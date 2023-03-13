@@ -1,0 +1,8 @@
+<aura:component>
+    <aura:renderIf isTrue="{!v.truthy}">
+    True
+    <aura:set attribute="else">
+      False
+    </aura:set>
+  </aura:renderIf> 
+</aura:component>

@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<div>
+        <h1 >hello from lightning</h1>
+        <h2 class="a1">If there is no struggle, there is no progress.</h2>
+        <h3 class="b1">Develop success from failures. Discouragement and failure are two of the surest stepping stones to success.</h3>
+        <h4 class="c1">If you don’t risk anything, you risk even more</h4>
+    </div>
+</aura:component>

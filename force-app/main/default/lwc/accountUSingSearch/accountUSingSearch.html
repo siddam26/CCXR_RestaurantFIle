@@ -1,0 +1,20 @@
+<template>
+    <div class="margin-bottom-2rem">
+        <lightning-card title="Passing two values from parent to child" icon-name="custom:custom14">
+            <div class="slds-m-around_medium">
+                <div class="parent-wrapper">
+                    <h2>Parent Component</h2>
+                    <div class="field">      
+                        <lightning-input type="text" label="Enter string to search" onchange={handleChange1} value={firstnumber} name="fnumber"></lightning-input>
+                       
+                          
+                    </div>
+                    <div class="child-wrapper">
+                        <h2>Child Component</h2>
+                        <c-account-using-search-child firstnumber={firstnumber}></c-account-using-search-child>
+                    </div>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>

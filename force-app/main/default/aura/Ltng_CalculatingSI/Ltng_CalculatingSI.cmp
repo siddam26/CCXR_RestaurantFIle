@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute name='amount' type="integer" />
+    <aura:attribute name='roi' type="integer" />
+    <aura:attribute name='noofyears' type="integer" />
+    <aura:attribute name="si" type="integer"/>
+    <aura:attribute name="amounttoreturn" type="integer"/>
+    
+        <lightning:input name="amount" label="principal amount " required="true" value="{!v.amount}"/>
+        <lightning:input name="roi" label="rate of intrest" required="true" value="{!v.roi}"/>
+        <lightning:input name="no of years" label="No of years"  required="true" value="{!v.noofyears}"/>
+        <lightning:input name="si" label="intrest"  value="{!v.si}"/>
+        <lightning:input name="amount to return" label="Amount including intrest"  value="{!v.amounttoreturn}"/>
+        <lightning:button variant="success" label="Calculatesmpinterst" title="concat" onclick="{!c.calintrest}"/>
+    
+</aura:component>

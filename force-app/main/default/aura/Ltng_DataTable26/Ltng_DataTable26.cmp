@@ -1,0 +1,35 @@
+<aura:component controller="Ltng_Datatable26Controller" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 <aura:attribute name="tabledata" type="Job_Application__c" />
+    <aura:attribute name="columns" type="list" />
+    <aura:attribute name="selected" type="boolean"/>
+    <aura:attribute name="selectedJAS" type="list"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    
+    <lightning:datatable
+                keyField="id"
+                data="{! v.tabledata }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="false"
+                onrowselection="{!c.showselectedrows}"/>
+    <aura:if isTrue="{!v.selected}">
+        <b>Job Application List</b><br/><br/>
+         <lightning:datatable
+                        keyField="id"
+                		data="{! v.selectedJAS }"
+                        columns="{! v.columns }" />
+        
+    </aura:if>
+</aura:component>
+
+<!--<aura:iteration items="{!v.selectedJAS}" var="jas">
+            
+           
+            {!jas.Name},
+            {!jas.Status__c},
+             {!jas.Candidate__r.Last_Name__c},
+             {!jas.Position__r.Name}
+            
+           
+            
+        </aura:iteration>-->

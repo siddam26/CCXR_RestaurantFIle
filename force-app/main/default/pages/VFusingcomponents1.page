@@ -1,0 +1,12 @@
+<apex:page standardController="Account" recordSetVar="accs">
+    <c:VFcmp1 />
+    <c:VFcmp2 Mycity="Hyderabad"/>
+    <c:VFcmp3 Mycity="Banglore" txtcolor="Orange" bgcolor="Green" borderwidth="25"/> 
+    <apex:pageBLock >
+        <apex:pageBLockTable value="{!accs}" var="a">
+            <apex:column value="{!a.NAme}"/>
+            <apex:column value="{!a.Industry}"/>
+            <apex:column value="{!a.Phone}"/>
+        </apex:pageBLockTable>
+    </apex:pageBLock>
+</apex:page>

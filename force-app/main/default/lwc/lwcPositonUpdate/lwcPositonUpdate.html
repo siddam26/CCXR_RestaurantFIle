@@ -1,0 +1,13 @@
+<template>
+  <lightning-card title="Position Using Record Form">
+      <p class="slds-p-horizontal_small">
+          <lightning-record-form
+              object-api-name={objectApiName}
+              record-id={recordId}
+              fields={fieldList}
+              onsuccess={handleAccountCreate}>
+          </lightning-record-form>
+
+      </p>
+  </lightning-card>
+</template>

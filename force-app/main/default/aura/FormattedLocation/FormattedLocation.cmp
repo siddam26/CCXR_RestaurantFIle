@@ -1,0 +1,8 @@
+<aura:component>
+    <lightning:formattedLocation latitude="22" longitude="132.2222"/>
+</aura:component>
+
+
+<!-- In  this latitude value exist between  90.5 or -90.5
+longitude vlaue exist between 180.5 or -180.5
+It displays the ouput in read only and in dd format(decimal degrees) which is used in gis gps-->

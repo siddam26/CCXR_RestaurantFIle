@@ -1,0 +1,11 @@
+<apex:component >
+    <apex:attribute name="Mycity" type="String" required="true" description="Provides City Value"/>
+    <apex:outputText >
+          <center>
+          <font color="Green" size="12">
+					From Component2 ::{!Mycity}
+           </font>
+        </center>
+
+    </apex:outputText>
+</apex:component>

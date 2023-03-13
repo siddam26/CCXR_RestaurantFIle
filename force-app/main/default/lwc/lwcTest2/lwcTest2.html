@@ -1,0 +1,22 @@
+<template>
+        <lightning-card>
+            <h3 slot="title">
+                <lightning-icon icon-name="standard:people" size="small"></lightning-icon>
+                &nbsp;
+                Mass Delete Candidate records
+            </h3>
+            <div slot="footer">
+                <lightning-button  label="Delete Selected Records" variant="brand" onclick={deleteSelRecords}>
+                </lightning-button>
+                <div>
+                        {message}
+                </div>
+            </div>            
+            <p class="slds-p-horizontal_small">            
+                <lightning-datatable data={accrec.data} columns={columns} key-field="id" onrowselection={prepareSelectedRows}>
+    
+                </lightning-datatable>  
+            </p>   
+        </lightning-card>
+
+</template>

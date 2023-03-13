@@ -1,0 +1,40 @@
+<template>
+    <!--Items Content !-->
+    <lightning-card>
+        <template if:true={itmList}>
+            <div class="slds-grid slds-wrap">
+                <template for:each={itmList} for:item="itm">
+                    <div key={itm.Id} class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                       
+                        <lightning-card icon-name="standard:identifier">
+                            <p slot="title" class="slds-card__header">
+                                <b>Item Name : {itm.CCXR_Item_Name__c}</b>
+                            </p>
+                        <div class="slds-card__body">
+                          <div class="slds-grid slds-no-flex">
+                            &nbsp;&nbsp;<div class="slds-size_1-of-2">
+                                Item Status : <b>{itm.CCXR_Item_Status__c}</b><br/> 
+                                
+                                Item Description : {itm.CCXR_Description__c}<br/>
+                            </div>  
+                            <div class="slds-size_1-of-2"> 
+                                    Item Image : <img 
+                                                src={itm.Item_Image_Link__c}
+                                                alt=" " 
+                                                height="100px" 
+                                                width="50px"/><br/>
+                                
+                            </div>
+                         </div>
+                        </div>
+                            <p slot="footer">
+                                <b>Item Price : {itm.CCXR_Price__c}</b>
+                            </p>
+                        </lightning-card>
+                    </div>
+                    
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,39 @@
+<template>
+    <!--Chef & Waiter-->
+    <lightning-card>
+        
+    </lightning-card>
+    <lightning-card class="myClass">
+        <div class="slds-grid slds-wrap">
+            <template if:true={empList}>
+            <template for:each={empList} for:item="emp">
+                <div key={emp.Id} class="slds-col slds-size_1-of-3 slds-p-around_small">
+                   
+                    <lightning-card icon-name="standard:identifier">
+                        <p slot="title">
+                            <b>Emp Name : {emp.CCXR_Name__c}</b>
+                        </p>
+                        <p class="slds-p-horizontal_small">
+                            Emp Name : {emp.CCXR_Name__c}<br/> 
+                            Emp Type : <b>{emp.CCXR_Type_of_Employee__c}</b><br/>
+                            Emp Phone : {emp.CCXR_Phone__c}<br/>
+                            Emp Email : {emp.CCXR_Email__c}<br/>
+                        </p>
+                        <p slot="footer">
+                            <template for:each={emp.CCXR_Chef_Statuses__r} for:item="cont">
+                                <div key={cont.Id} class="slds-hint-parent">
+                                    <b>Emp Status :{cont.CCXR_Chef_Current_Status__c} </b>
+                                </div>
+                            </template>
+                        </p>
+                    </lightning-card>
+                </div>
+                
+            </template>
+            </template>
+         <template if:true={error}>
+            {error}
+        </template>
+        </div>
+    </lightning-card>
+</template>

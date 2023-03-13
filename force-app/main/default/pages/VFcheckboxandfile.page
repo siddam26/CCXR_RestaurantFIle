@@ -1,0 +1,14 @@
+<apex:page standardController="Account">
+     <apex:form >
+    <apex:inlineEditSupport /><br/>
+        Account CheckBox :: <apex:inputCheckbox value="{!Account.PersonDoNotCall}"  /><br/>
+        Account Name :: <apex:inputText value="{!Account.name}" /><br/>
+        Account Industry :: <apex:inputField value="{!Account.Industry}"/>  <br/>
+        Account Description :: <apex:inputField value="{!Account.Description}" /><br/>
+        Account OwnerId :: <apex:inputField value="{!Account.OwnerId}" /><br/>
+        Input Files :: <apex:inputFile value="{!Account.name}"  size="100" /><br/>
+        InputHidden :: <apex:inputHidden value="{!Account.name}" /><br/>
+        Input Secret :: <apex:inputSecret value="{!Account.name}" /><br/>
+        Input Text Area :: <apex:inputTextarea rows="5" cols="10" /><br/>
+    </apex:form>
+</apex:page>

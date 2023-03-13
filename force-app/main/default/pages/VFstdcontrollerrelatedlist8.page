@@ -1,0 +1,6 @@
+<apex:page standardController="Position__c">
+    This is your standard controller:VFstdcontrollerrelatedlist
+    <apex:detail relatedList="false"/>
+    <apex:relatedList list="Job_Applications__r"/>
+    
+</apex:page>

@@ -1,0 +1,80 @@
+<!--Write visual force code to design like standard New Account Record creation page-->
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageBlock title="Business Account Edit" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!Save}"/>
+               <apex:commandButton action="{Save&New}" value="Save & New"  /> 
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+               
+            </apex:pageBlockButtons>
+ 
+ 
+                <apex:pageBlockSection title="Account Information"  columns="2" >
+                <apex:inputField value="{!Account.OwnerId}" />
+               <apex:inputField value="{!Account.Active__c}" />
+                <apex:inputField value="{!Account.name}" />
+                 <apex:inputField value="{!Account.UpsellOpportunity__c}" />
+                 <apex:inputField value="{!Account.ParentId}" />
+                     <apex:inputField value="{!Account.Type}" />
+                <apex:inputField value="{!Account.AccountNumber}" />
+                <apex:inputField value="{!Account.Rating}" />
+                <apex:inputField value="{!Account.Site}" />
+                <apex:inputField value="{!Account.phone}" />
+                 <apex:inputField value="{!Account.industry}" />
+                 <apex:inputField value="{!Account.fax}" />
+                 <apex:inputField value="{!Account.Sic}" />
+                 <apex:inputField value="{!Account.website}" />
+                 <apex:inputField value="{!Account.annualrevenue}" />
+                 <apex:inputField value="{!Account.TickerSymbol}" />
+                 <apex:inputField value="{!Account.NumberOfEmployees}" />
+                 <apex:inputField value="{!Account.Ownership}" />
+                 <apex:inputField value="{!Account.Contact_Name__c}" />
+                 <apex:inputField value="{!Account.NumberofLocations__c}" />
+                 <apex:inputField value="{!Account.CurrencyIsoCode}" /><br/>
+                 <apex:inputField value="{!Account.Latest_Contact__c}" /><br/>
+                 <apex:inputField value="{!Account.Latest_Oppurtunity__c}" /><br/>
+                 <apex:inputField value="{!Account.Region__c}" /><br/>
+                 <apex:inputField value="{!Account.Direction__c}" /><br/>
+                 <apex:inputField value="{!Account.EmailId__c}" /><br/>
+                 <apex:inputField value="{!Account.Assosiated_contacts__c}" /><br/>
+                 <apex:inputField value="{!Account.TotalOpportunityAmount__c}" /><br/>
+                 <apex:inputField value="{!Account.TotalSales__c}" /><br/>
+                 <apex:inputField value="{!Account.Asset_Minimum_Expiration_Date__c}" /><br/>
+                 <apex:inputField value="{!Account.Min_Date__c}" /><br/>
+                 <apex:inputField value="{!Account.Max_Date__c}" /><br/>
+                           </apex:pageBlockSection>
+                           
+                           
+                           <apex:pageBlockSection title="Address Information" showHeader="true" collapsible="true" id="phBillingaddress" >
+                           <apex:inputField value="{!Account.billingstreet}" />
+                           <apex:inputField value="{!Account.shippingstreet}" />
+                           <apex:inputField value="{!Account.billingcity}" />
+                           <apex:inputField value="{!Account.shippingcity}" />
+                           <apex:inputField value="{!Account.billingPostalCode}" />
+                           <apex:inputField value="{!Account.shippingPostalCode}" />
+                           <apex:inputField value="{!Account.billingState}" />
+                           <apex:inputField value="{!Account.shippingState}" />
+                           <apex:inputField value="{!Account.billingCountry }" />
+                            <apex:inputField value="{!Account.shippingcountry}" /> 
+                           </apex:pageBlockSection>
+                          
+                              
+                           <apex:pageBlockSection title="Addtional Information"  >
+                            <apex:inputField value="{!Account.CustomerPriority__c}" />
+                             <apex:inputField value="{!Account.SLA__c}" />
+                              <apex:inputField value="{!Account.SLAExpirationDate__c}" />
+                               <apex:inputField value="{!Account.SLASerialNumber__c}" />
+                                
+                            </apex:pageBlockSection>
+                           
+                           
+                           <apex:pageBlockSection title="Description Information" showHeader="true" >
+                            <apex:inputField value="{!Account.Description}" /><br/>
+                            <apex:inputField value="{!Account.Alphabets__c}" /><br/>
+                            </apex:pageBlockSection>
+                           
+        </apex:pageBlock>
+    </apex:form>>
+    
+</apex:page>

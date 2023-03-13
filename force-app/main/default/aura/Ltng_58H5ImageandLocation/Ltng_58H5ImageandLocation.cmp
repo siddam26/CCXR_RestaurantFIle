@@ -1,0 +1,25 @@
+<aura:component >
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+	<div>
+         <div class="slds-float_left">
+         <img src="{!$Resource.Today1}" height="200" width="200" />
+        </div>
+    </div>
+    <div class="slds-float_right">
+        <lightning:formattedAddress
+        street="Street No 6,4-170, RTC Colony, Chengicherla"
+        city="HYDERABAD"
+        country="IND"
+        province="TS"
+        postalCode="500098"
+        disabled="true"
+    />
+   
+
+    <lightning:map 
+        mapMarkers="{! v.mapMarkers }" 
+        zoomLevel="{!v.zoomLevel}" />
+    </div>
+</aura:component>

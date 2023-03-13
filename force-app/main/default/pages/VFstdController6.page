@@ -1,0 +1,8 @@
+<apex:page standardController="Position__c">
+    <font size="5">
+        This is your new page:VFstdController6<br/>
+        position name::{!Position__c.Name}<br/>
+        position location::{!Position__c.Location__c}<br/>
+        position functional area::{!Position__c.Functional_Area__c}<br/>
+    </font>
+</apex:page>

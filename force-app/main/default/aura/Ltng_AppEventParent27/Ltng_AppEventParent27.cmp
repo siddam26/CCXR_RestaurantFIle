@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:handler event="c:Ltng_AppEvent27" action="{!c.handleFromchild}"/>
+    <aura:attribute name="ParentMessage" type="String" default="From Parent"/>
+    <b>
+        {!v.ParentMessage}
+        
+    </b>
+	
+</aura:component>

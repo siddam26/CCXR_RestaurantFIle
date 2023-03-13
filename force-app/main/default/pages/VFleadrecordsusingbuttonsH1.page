@@ -1,0 +1,18 @@
+<apex:page standardController="Lead" recordSetVar="lds" id="pgId">
+<apex:form id="fmId" >
+        <apex:sectionHeader title="Leads" subtitle="Lead Page"/>
+        <apex:pageBlock title="Lead Info" id="pdId"  >
+            <apex:pageBlockButtons >
+         <apex:commandButton value="Previous" action="{!quicksave}"  />
+         <apex:commandButton value="Next" action="{!next}" />
+        </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!lds}" var="l">
+                <apex:column value="{!l.name}" colspan="1"/>
+                <apex:column value="{!l.Rating}"/>
+                <apex:column value="{!l.Status}"/>
+                <apex:column value="{!l.Industry}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+         
+    </apex:form>
+ </apex:page>

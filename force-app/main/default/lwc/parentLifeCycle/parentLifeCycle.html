@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-var-m-around_x-large">
+        <lightning-card title="Parent component">
+            <div class="slds-var-m-around_medium">
+                <h1>Hey I'm LifeCycle Parent Component</h1>
+                <lightning-input type="text" onkeyup={changeHandler}>{name}</lightning-input>
+            </div>
+            
+            <c-child-life-cycle></c-child-life-cycle>
+
+            <div>
+                <lightning-card title="Parent component 2">
+                    <div class="slds-var-m-around_medium">
+                        <template if:true={isChildVisible}>
+                             <lightning-button class="slds-m-left_x-small" 
+                                    variant="brand"
+                                    label="ParentChild" 
+                                    onclick={handleClick}>
+                             </lightning-button>
+                        </template>
+
+                        <template if:false={isChildVisible}>
+                            <lightning-button class="slds-m-left_x-small" 
+                                   variant="brand"
+                                   label="ParentChild" 
+                                   onclick={handleClick}>
+                            </lightning-button>
+                       </template>
+
+                    </div>
+                </lightning-card>
+            </div>
+
+        </lightning-card>
+    </div>
+</template>

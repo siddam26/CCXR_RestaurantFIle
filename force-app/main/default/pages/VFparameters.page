@@ -1,0 +1,8 @@
+<apex:page >
+    <font size="3">
+        This is your bew page:VFparameters<br/>
+        Name:{!$CurrentPage.parameters.name}<br/>
+        age:{!$CurrentPage.parameters.age}<br/>
+       salary:{!$CurrentPage.parameters.salary}<br/>
+    </font>
+</apex:page>

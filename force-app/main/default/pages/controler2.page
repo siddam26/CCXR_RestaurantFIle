@@ -1,0 +1,15 @@
+<apex:page controller="Controller2">
+    <apex:form >
+        <apex:pageBlock >
+       <apex:pageBlockButtons >
+            <apex:commandButton value="Direct Accounts" action="{!directacts}"/>
+            <apex:commandButton value="Channel Accounts" action="{!channelacts}"/> 
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!acts}" var="a">
+            <apex:column value="{!a.name}"/>
+            <apex:column value="{!a.industry}"/>
+            <apex:column value="{!a.type}"/>
+        </apex:pageBlockTable>
+</apex:pageBlock>
+           </apex:form>
+</apex:page>

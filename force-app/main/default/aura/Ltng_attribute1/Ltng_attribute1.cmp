@@ -1,0 +1,43 @@
+<aura:component implements="force:appHostable">
+  <aura:attribute name="EmpName" type="String" default="james" />
+  <aura:attribute name="EmpAge" type="Integer" default="29" />
+  <aura:attribute name="EmpSalary" type="Decimal" default="40000" />
+  <aura:attribute name="DateOfBirth" type="Date" default="1997-05-11" />
+  <aura:attribute
+    name="TimeOfBirth"
+    type="DateTime"
+    default="1997-05-11-20T22:10.000Z"
+  />
+  <aura:attribute name="IsIndian" type="Boolean" default="True" />
+  <aura:attribute
+    name="IndianNationalIncome"
+    type="Double"
+    default="54795147632"
+  />
+  <aura:attribute name="EmpIds" type="Integer[]" default="[11,22,54,32]" />
+  <aura:attribute
+    name="EmpCities"
+    type="String[]"
+    default="['Hyd','delhi','Mumbai']"
+  />
+  <aura:attribute name="DIds" type="Set" default="[10,20,50,30]" />
+  <aura:attribute name="EmpNames" type="List" default="['samar','Rahul','1']" />
+  <aura:attribute
+    name="EmpIdsName"
+    type="Map"
+    default="{a:'lokesh',b:'yashwanth'}"
+  />
+
+  EmpName(String):{!v.EmpName}<br /> EmpAge(Integer):{!v.EmpAge}<br />
+  EmpSalary(Decimal):{!v.EmpSalary}<br />
+  DateOfBirth(Date):{!v.DateOfBirth}<br />
+  TimeOfBirth(DateTime):{!v.TimeOfBirth}<br />
+  IsIndian(Boolean):{!v.IsIndian}<br />
+  IndianNationalIncome(Double):{!v.IndianNationalIncome}<br />
+  EmpIds(Integer[]):{!v.EmpIds[0]},{!v.EmpIds[1]}<br />
+  EmpCities(String[]):{!v.EmpCities[0]},{!v.EmpCities[1]}<br />
+  DIds(Set[]):{!v.DIds[0]},{!v.DIds[1]}<br />
+  EmpNames(List):{!v.EmpNames[0]},{!v.EmpNames[1]},{!v.EmpNames[2]}<br />
+  EmpIdsName(Map):<br /> value of key a:{!v.EmpIdsName.a}<br /> value of key
+  b:{!v.EmpIdsName.b}<br />
+</aura:component>

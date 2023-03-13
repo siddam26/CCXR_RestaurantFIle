@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="review ">
+        <h2>review </h2>
+        <p class="slds-p-horizontal_small">
+            <lightning-record-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                fields={fieldList}
+                onsuccess={handleJobUpdate}>
+            </lightning-record-form>
+
+        </p>
+    </lightning-card>
+</template>

@@ -1,0 +1,52 @@
+<apex:page standardController="Account" recordSetVar="accs">
+    <apex:form >
+        
+        <!--1-->
+        <apex:pageBlock title="Accounts Information using Pageblock Value">
+            <apex:pageBlockTable value="{!accs}" var="a">
+                
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.industry}"/>
+                <apex:column value="{!a.phone}"/>
+                <apex:column value="{!a.AnnualRevenue}"/>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+        <!--2-->
+        <apex:pageBlock title="Accounts Information using Datatable Value">
+            <apex:dataTable value="{!accs}" var="a" align="center" bgcolor="green" border="3" width="60px" cellspacing="100" rules="All">
+                
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.industry}"/>
+                <apex:column value="{!a.phone}"/>
+                <apex:column value="{!a.AnnualRevenue}"/>
+                
+            </apex:dataTable>
+        </apex:pageBlock>
+        
+        <!--3-->
+        <apex:pageBlock title="Accounts Information using DataList Value">
+            <apex:dataList value="{!accs}" var="a" first="1" type="circle">
+                
+                "{!a.name}"
+                "{!a.industry}"
+                "{!a.phone}"
+                "{!a.AnnualRevenue}"
+                
+           </apex:dataList>
+        </apex:pageBlock>
+        
+        <!--4-->
+        <apex:pageBlock title="Accounts Information using Repeat Value">
+            <apex:repeat value="{!accs}" var="a">
+                
+                "{!a.name}"
+                "{!a.industry}"
+                "{!a.phone}"
+                "{!a.AnnualRevenue}"
+                
+            </apex:repeat>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

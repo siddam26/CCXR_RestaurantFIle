@@ -1,0 +1,807 @@
+<template>
+    <div class="slds-box slds-theme_shade slds-theme_alert-texture">
+    <div class="backgroundImg" style={getBackgroundImage} >
+<lightning-tabset class="slds-tabs_default slds-tabs_large"
+style="color: purple">
+
+    <lightning-tab label="Vegetarian" icon-name="custom:custom51"
+    alternative-text="Event"
+    size="xx-small"  >
+
+        <lightning-tabset variant="vertical">
+            <!--1..1. Starters-->
+            <lightning-tab label="Starters">
+                <template if:true={contacts}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={contacts} for:item="contact">
+                            <div key={contact.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={contact.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer"><b>Price:</b>  <lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {contact.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={contact.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {contact.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {contact.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={contacts}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+
+
+            <!--1.2. Veg Soups-->
+            <lightning-tab label="Soups">
+                <template if:true={soups}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={soups} for:item="soup">
+                            <div key={soup.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={soup.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price: </b> <lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {soup.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={soup.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {soup.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {soup.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={soups}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+
+
+            <!--1.3. Veg Rice -->
+            <lightning-tab label="Rice">
+                <template if:true={riceItem}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={riceItem} for:item="rice">
+                            <div key={rice.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={rice.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price: </b> <lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {rice.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={rice.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {rice.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {rice.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={riceItem}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+
+            <!--1.4 Veg Curries-->
+            <lightning-tab label="Curry">
+                <template if:true={curries}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={curries} for:item="curry">
+                            <div key={curry.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={curry.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price: </b> <lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {curry.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={curry.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {curry.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {curry.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={curries}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+
+            <lightning-tab label="Roti">
+                <template if:true={roties}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={roties} for:item="roti">
+                            <div key={roti.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={roti.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {roti.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={roti.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {roti.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {roti.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={roties}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+
+            <!--1.5 Desserts -->
+            <lightning-tab label="Desserts">
+                <template if:true={desserts}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={desserts} for:item="dessert">
+                            <div key={dessert.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={dessert.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price: </b> <lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {dessert.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={dessert.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {dessert.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {dessert.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={desserts}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-tab>
+            
+        <!--2.Non-Veg-->
+    <lightning-tab label="Non-Vegetarian" icon-name="standard:customer"
+    alternative-text="Event"
+    size="xx-small">
+        <lightning-tabset variant="vertical">
+            <!--2.1 Non-Veg Starters-->
+            <lightning-tab label="Starters">
+                <template if:true={nonVegStarters}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={nonVegStarters} for:item="nonVegStarter">
+                            <div key={nonVegStarter.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={nonVegStarter.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {nonVegStarter.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={nonVegStarter.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {nonVegStarter.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {nonVegStarter.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={nonVegStarters}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+
+
+            <!--2.2 Non-Veg Soups-->
+            <lightning-tab label="Soups">
+                <template if:true={nonVegSoups}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={nonVegSoups} for:item="nonVegSoup">
+                            <div key={nonVegSoup.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={nonVegSoup.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {nonVegSoup.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={nonVegSoup.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {nonVegSoup.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {nonVegSoup.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={nonVegSoups}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+
+
+            <!--2.3 Non-Veg Rice-->
+            <lightning-tab label="Rice">
+                <template if:true={nonvegRiceItem}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={nonvegRiceItem} for:item="nonVegRice">
+                            <div key={nonVegRice.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={nonVegRice.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {nonVegRice.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={nonVegRice.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {nonVegRice.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {nonVegRice.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="0" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={nonvegRiceItem}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+
+            <!--2.4 Non-Veg Curries-->
+            <lightning-tab label="Curry">
+                <template if:true={nonVegCurries}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={nonVegCurries} for:item="nonVegCurry">
+                            <div key={nonVegCurry.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={nonVegCurry.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {nonVegCurry.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={nonVegCurry.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {nonVegCurry.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {nonVegCurry.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="0" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={nonVegCurries}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+            <!--2.5 Roti-->
+            <lightning-tab label="Roti">
+                <template if:true={nonVegRoties}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={nonVegRoties} for:item="nonVegRoti">
+                            <div key={nonVegRoti.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={nonVegRoti.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {nonVegRoti.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={nonVegRoti.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {nonVegRoti.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {nonVegRoti.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={nonVegRoties}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+            
+
+            <lightning-tab label="Desserts">
+                <template if:true={nonVegDesserts}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={nonVegDesserts} for:item="nonVegDessert">
+                            <div key={nonVegDessert.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={nonVegDessert.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {nonVegDessert.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={nonVegDessert.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {nonVegDessert.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {nonVegDessert.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={nonVegDesserts}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+
+        </lightning-tabset>
+    </lightning-tab>
+    <lightning-tab label="Beverages" icon-name="utility:food_and_drink"
+    alternative-text="Event"
+    size="xx-small" >
+        <lightning-tabset variant="vertical">
+            <lightning-tab label="Water">
+                <template if:true={waterItem}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={waterItem} for:item="water">
+                            <div key={water.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={water.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {water.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={water.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {water.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {water.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={waterItem}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+            <lightning-tab label="MilkShakes">
+                <template if:true={milkshakes}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={milkshakes} for:item="milkshake">
+                            <div key={milkshake.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={milkshake.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {milkshake.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={milkshake.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {milkshake.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {milkshake.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={milkshakes}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+            <lightning-tab label="Ice Creames">
+                <template if:true={icecreams}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={icecreams} for:item="icecream">
+                            <div key={icecream.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={icecream.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {icecream.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={icecream.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {icecream.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {icecream.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={icecreams}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+            <lightning-tab label="Sweets">
+                <template if:true={sweets}>
+                    <div class="slds-grid slds-wrap" style="color: aqua;">
+                        <template for:each={sweets} for:item="sweet">
+                            <div key={sweet.Id} class="slds-col
+                                slds-size_1-of-3 slds-p-around_medium">
+                                <lightning-card class="image"
+                                    title={sweet.CCXR_Item_Name__c} style="color: black;">
+                                    <lightning-button variant="brand"
+                                        label="Add to Cart" slot="actions" onclick={handleClick}>
+        
+                                    </lightning-button>
+                                        <p slot="footer" style="color:
+                                        black;"><b>Price:  </b><lightning-icon icon-name="utility:moneybag"
+                                            alternative-text="Event"
+                                            size="xx-small"></lightning-icon> <b> {sweet.CCXR_Price__c}</b>
+        
+                                        </p>
+                                        <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={sweet.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {sweet.CCXR_Item_Prep_Time__c}<br>
+                                                Serves: {sweet.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" value="1" style="width:50px"></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={sweets}>
+                    <p>No Items found for this account.</p>
+                </template>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-tab>
+</lightning-tabset>
+</div>
+</div>
+</template>

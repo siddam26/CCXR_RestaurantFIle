@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:handler name="regInchild" event="c:Ltng_CompEvent26" action="{!c.handleFromchild}"/>
+    <aura:attribute name="ParentMessage" type="String" default="From Parent Component"/>
+    <c:Ltng_ChildComp26/>
+    <b>
+        {!v.ParentMessage}
+    </b>
+	
+</aura:component>

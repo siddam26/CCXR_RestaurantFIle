@@ -1,0 +1,11 @@
+<template>
+    <lightning-input label="Enter Family" onchange={handleChange1} 
+    value={familys} name="Category"></lightning-input>
+    <lightning-button variant="success" label="GetProducts" onclick={addittionHandler}>
+    </lightning-button>
+    <lightning-datatable
+    data={data}
+    columns={columns}
+    key-field="id">
+</lightning-datatable>
+</template>

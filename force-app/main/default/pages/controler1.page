@@ -1,0 +1,20 @@
+<apex:page controller="Controller1">
+    <apex:pageBlock title="List of Direct and Channel Accounts">
+        <apex:pageBlockSection >
+            <apex:pageBlock title="Direct Accounts">
+                <apex:pageBlockTable value="{!dirrec}" var="a">
+                    <apex:column value="{!a.name}"/>
+            <apex:column value="{!a.industry}"/>
+            <apex:column value="{!a.phone}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:pageBlock title="Channel Accounts">
+                <apex:pageBlockTable value="{!charec}" var="b">
+                    <apex:column value="{!b.name}"/>
+            <apex:column value="{!b.industry}"/>
+            <apex:column value="{!b.phone}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

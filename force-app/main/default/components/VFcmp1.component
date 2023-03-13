@@ -1,0 +1,9 @@
+<apex:component >
+    <apex:outputLabel >
+        <center>
+          <font color="Red" size="12">
+					From Component ::CommerceCX Private Limited
+           </font>
+        </center>
+    </apex:outputLabel>
+</apex:component>

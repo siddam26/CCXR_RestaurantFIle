@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Quick Contact Update">
+        <p class="slds-p-horizantal_small">
+            <lightning-record-form
+                object-api-name={objectApiName}
+                 fields={fieldList}
+                 record-id={recordId}
+                 onsuccess={handleSuccess}>
+            </lightning-record-form>
+        </p>
+    </lightning-card>
+</template>

@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+
+   
+    <aura:attribute name="recordId" type="String"/>
+    <p>Displaying Contact record using record form</p>
+    <lightning:card>
+    <lightning:recordForm 
+                     recordId="0035g00000niAv2AAE"
+                     objectApiName="Contact"
+                     layoutType="Compact"
+                      columns="2"
+                     mode="readonly"/>
+        </lightning:card>
+    <!-- mode="readonly"-->
+    <!-- mode="readonly"-->
+</aura:component>

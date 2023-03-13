@@ -1,0 +1,36 @@
+<aura:component controller="LtngH_PositiondataController15">
+    <aura:attribute name="Positions" type="list"/>
+    <aura:attribute name="Plocation" type="String"/>
+    <div>
+    <lightning:input name="location" label="location" placeholder="Input location to search" value="{!v.Plocation}" />
+       </div>
+    <lightning:button variant="success" label="Get Position records" title="Positions" onclick="{!c.searchPositions}"/>
+                       
+    Position info::<br/><br/><br/>
+    <div class="slds-grid slds-wrap">
+    <aura:iteration items="{!v.Positions}" var="l"><br/><br/>
+       <div class="slds-col slds-size_1-of-4 slds-p-around_medium"> 
+           <lightning:card>
+               <aura:set attribute="title">
+                   <lightning:icon iconName="custom:custom5" size="small"/>
+                   {!l.Name}
+               </aura:set>
+               <aura:set attribute="footer">
+                   
+                   {!l.Location__c}
+               </aura:set>
+               <aura:set attribute="actions">
+                   <Lightning:button variant="brand" label="detail" title="Positions" onclick="{!c.searchPositions}"/>
+               </aura:set>
+               <p>
+                   <b>{!l.Name}</b><br/>
+                   {!l.Functional_Area__c}<br/>
+               </p>
+       
+                   
+               </lightning:card>
+        </div>
+    </aura:iteration>
+    </div>
+	
+</aura:component>

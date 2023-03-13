@@ -1,0 +1,16 @@
+<apex:page controller="c10_Extension">
+    <apex:form >
+        <apex:pageBlock >
+                    Enter Search String:
+            <apex:inputText id="SearchString" value="{!SearchString}"/>
+                    <apex:commandButton value="Go" action="{!doSearch}" />
+        <apex:pageBlockSection title="Leads"  columns="1" >
+            <apex:pageblocktable value="{!lds}" var="l">
+            <apex:column value="{!l.firstname}"/>
+            <apex:column value="{!l.email}"/>
+            <apex:column value="{!l.phone}"/>
+            </apex:pageblocktable>               
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

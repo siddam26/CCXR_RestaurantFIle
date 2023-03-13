@@ -1,0 +1,21 @@
+<template>
+    <div class="margin-bottom-2rem">
+        <lightning-card title="Passing two values from parent to child" icon-name="custom:custom14">
+            <div class="slds-m-around_medium">
+                <div class="parent-wrapper">
+                    <h2>Parent Component</h2>
+                    <div class="field">      
+                        <lightning-input label="Enter First Number" onchange={handleChange1} value={firstnumber} name="fnumber"></lightning-input>
+                        <lightning-input label="Enter second Number" onchange={handleChange2} value={secondnumber} name="snumber"></lightning-input>
+                     
+                          
+                    </div>
+                    <div class="child-wrapper">
+                        <h2>Child Component</h2>
+                        <c-child-power firstnumber={firstnumber} secondnumber={secondnumber}></c-child-power>
+                    </div>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>

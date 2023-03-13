@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="fields" type="String[]" default="['Name','AnnualRevenue','Industry','Rating']" />
+    <lightning:notificationslibrary aura:id="notify"/>
+    <lightning:recordForm
+	        aura:id="myRecordForm"
+        recordId="{!v.recordId}"
+        objectApiName="Account"
+        fields="{!v.fields}"
+        columns="2"
+        layout="compact"
+        mode="edit"
+        onsubmit="{!c.handleSubmit}" />
+</aura:component>

@@ -1,0 +1,20 @@
+<aura:component controller="CreateJobApplicationByPositionController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+   
+   
+    <lightning:input label="Status" placeholder="Enter Status" aura:id='st' />
+  
+    <lightning:button variant="success" label="Create Job Application"  onclick="{!c.createJob}"/> <br/>
+    record Id:{!v.recordId}
+</aura:component>
+
+
+<!--
+
+ <aura:attribute name="Status" type="string[]" default="New Application,Review Resume,Phone Screen,Schedule For Interview,	Extend An Offer,Rejected,Hired"/>
+    <aura:attribute name="recordId" type="id"/>
+    
+    <lightning:select name="select" label="Select status" required="true">
+         
+        <aura:iteration items="{!v.Status}" var="Status">
+                <option text="{!Status}"></option>
+            </aura:iteration>-->

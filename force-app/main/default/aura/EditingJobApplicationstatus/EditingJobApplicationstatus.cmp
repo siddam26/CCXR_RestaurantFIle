@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+
+    <p>Record Edit Form</p>
+    <div class="slds-grid slds-gutters">
+    
+     
+        <lightning:recordEditForm
+                          
+                          objectApiName="Job_Application__c"
+                          recordId="{!v.recordId}">    
+        <lightning:outputField fieldName="Name" />
+        <lightning:outputField fieldName="Position__c"/>
+        <lightning:inputField fieldName="Status__c" />
+        <lightning:outputField fieldName="Candidate__c"/>
+        
+        <lightning:button  class="slds-m-top_small"  variant="brand" label="update" name="Update" type="submit" />
+    </lightning:recordEditForm>
+    </div>
+        </aura:component>

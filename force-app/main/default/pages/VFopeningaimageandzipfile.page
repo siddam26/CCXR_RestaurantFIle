@@ -1,0 +1,18 @@
+<apex:page >
+    <font color="green" size="12">
+            Image from File
+    </font>
+    <center>
+            <apex:image url="{!$Resource.Today1}" height="200" width="200" />
+			<br/><br/><br/><br/><br/>
+    </center>
+    <font color="green" size="12">
+            Image from Folder uploaded as zip file
+    </font>
+    <center>
+        <apex:image url="{!URLFOR($Resource.Newimage,'images/Today.jfif')}" height="200" width="200" />
+				<br/><br/><br/><br/><br/>
+    </center>
+     
+   
+</apex:page>

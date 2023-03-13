@@ -1,0 +1,16 @@
+<template>
+    
+    <lightning-card title="CCXR_Restaurant Employee Registration" icon-name="standard:people">
+        <div class="backgroundImg" style={getBackgroundImage} >
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                object-api-name={objectApiName}
+                fields={Fields1}
+                onsuccess={recordCreated}
+                columns="2">
+            </lightning-record-form>
+        </div>
+    </div>
+    </lightning-card>
+    
+</template>

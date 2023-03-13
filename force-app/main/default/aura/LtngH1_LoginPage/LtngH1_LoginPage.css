@@ -1,0 +1,25 @@
+.THIS .slds-button_success
+{
+    width:370px;
+    background-color:#2B65EC;
+    height:40px;
+    color:white;
+}
+.THIS .all
+{
+    float:left;
+}
+.THIS .slds-box
+{
+    float:left;
+}
+.THIS .slds-align_absolute-center
+{
+    padding-right:60%;
+    padding-bottom:5%;
+}
+.THIS.credits
+{
+     float:right;
+    padding-right:40%;
+}

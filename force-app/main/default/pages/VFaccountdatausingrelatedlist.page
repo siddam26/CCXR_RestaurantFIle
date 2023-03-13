@@ -1,0 +1,17 @@
+<apex:page standardController="Account">
+    <apex:pageBlock title="Account And related Lists">
+        
+        <apex:pageBlockSection title="Account Detail">
+            <apex:detail relatedList="true"/>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Contacts of {!Account.name}" collapsible="True">
+            <apex:relatedList list="Contacts"/>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Opportunities of {!Account.name}" collapsible="True">
+            <apex:relatedList list="Opportunities"/>
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+</apex:page>

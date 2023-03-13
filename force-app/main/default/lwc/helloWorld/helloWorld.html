@@ -1,0 +1,22 @@
+<template>
+    <h1>Conditional Rendering</h1>
+    <lightning-button   variant="brand" label="Display on true" title="Successful action" onclick={handleClick}></lightning-button>
+    <template if:true={isvisible}>
+    <div>Display on true</div>
+    <h1>Hello Welcome to LWC Page</h1>
+    <lightning-card title="Hello CCX">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <div class="slds-var-m-arround_medium">
+            My name is {fullName}, <br/>
+            age is  {age},<br/>
+            and I'm Indian {isIndian}
+        </div><br/><br/>
+        <div class="slds-var-m-arround_medium">
+            My name is {empData.ename}, <br/>
+            age is  {empData.eage},<br/>
+            and my salary is {empData.esal}
+        </div>
+        <p slot="footer">CommerceCX</p>
+    </lightning-card>
+</template>
+</template>

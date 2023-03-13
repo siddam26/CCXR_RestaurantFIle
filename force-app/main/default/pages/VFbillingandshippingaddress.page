@@ -1,0 +1,59 @@
+<apex:page standardController="Account" id="pgcontent">
+    <script type="text/javaScript">
+    
+    function copyAddress()
+    {
+        var copy_billingcity=document.getElementById('pgcontent:fmcontent:pbcontent:phBillingaddress:ifbcity').value;
+        var copy_billingstreet=document.getElementById('pgcontent:fmcontent:pbcontent:phBillingaddress:ifbstreet').value;
+        var copy_billingstate=document.getElementById('pgcontent:fmcontent:pbcontent:phBillingaddress:ifbstate').value;
+        var copy_billingcountry=document.getElementById('pgcontent:fmcontent:pbcontent:phBillingaddress:ifbcountry').value;
+        
+        
+        if(copy_billingcity!=null)
+        {
+            document.getElementById('pgcontent:fmcontent:pbcontent:phBillingaddress:ifscity').value=copy_billingcity;
+        }
+        if(copy_billingstreet!=null)
+        {
+            document.getElementById('pgcontent:fmcontent:pbcontent:phBillingaddress:ifsstreet').value=copy_billingstreet
+        }
+        if(copy_billingstate!=null)
+        {
+            document.getElementById('pgcontent:fmcontent:pbcontent:phBillingaddress:ifsstate').value=copy_billingstate
+        }
+        if(copy_billingcountry!=null)
+        {
+            document.getElementById('pgcontent:fmcontent:pbcontent:phBillingaddress:ifscountry').value=copy_billingcountry;
+        }
+    }
+    </script>
+    
+    <apex:form id="fmcontent">
+        <apex:sectionHeader title="Account Information" subtitle="{!Account.name}"/>
+        
+        <apex:pageBlock mode="edit" id="pbcontent">
+            
+            <apex:pageBlockSection showHeader="true" collapsible="true" title="Billing Address Information" id="phBillingaddress">
+                <apex:facet name="Header">
+                    <apex:outputPanel style="font-weight:bold;">
+                        <apex:outputText >
+                            <apex:commandLink style="float:right" value="copy Billing address to shipping address" reRender="AddressinformationPBs" onclick="copyAddress()"/>
+                        </apex:outputText>
+                    
+                    </apex:outputPanel>
+                </apex:facet>
+                
+                <apex:inputField value="{!Account.billingcity}" id="ifbcity"/>
+                <apex:inputField value="{!Account.billingstreet}" id="ifbstreet"/>
+                <apex:inputField value="{!Account.billingstate}" id="ifbstate"/>
+                <apex:inputField value="{!Account.billingcountry}" id="ifbcountry"/>
+                
+                <apex:inputField value="{!Account.shippingcity}" id="ifscity"/>
+                <apex:inputField value="{!Account.shippingstreet}" id="ifsstreet"/>
+                <apex:inputField value="{!Account.shippingstate}" id="ifsstate"/>
+                <apex:inputField value="{!Account.shippingcountry}" id="ifscountry"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

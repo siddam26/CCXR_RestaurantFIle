@@ -1,0 +1,38 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="Ltng_PositiondataController14">
+    
+    <aura:attribute name="Position__c" type="list"/>
+     <lightning:card footer="Card Footer" title="Hello">
+         <lightning:input type="toggle" label="Basic option" name="input1" onclick="{!c.getpositions}"/>
+         </lightning:card>
+         <!--<lightning:button variant="success" label="Display Postions" title="Position" onclick="{!c.getpositions}"/><br/>-->
+         Position Information::<br/><br/>
+         <div class="slds-grid slds-wrap">
+    
+        <aura:iteration items="{!v.Position__c}" var="pos">
+        <div class="slds-col slds-size_1-of-4 slds-p-around_medium"> 
+           <lightning:card>
+               <aura:set attribute="title">
+                   <lightning:icon iconName="custom:custom5" size="small"/>
+                   {!pos.Name}
+               </aura:set>
+               <aura:set attribute="footer">
+                   
+                   {!pos.Location__c}
+               </aura:set>
+               <aura:set attribute="actions">
+                   <Lightning:button variant="brand" label="detail" title="Positions" onclick="{!c.getpositions}"/>
+               </aura:set>
+               <p>
+                   <b>{!pos.Name}</b><br/>
+                   {!pos.Functional_Area__c}<br/>
+               </p>
+       
+                   
+               </lightning:card>
+        </div>
+           
+    </aura:iteration>
+         </div>
+          
+         
+</aura:component>

@@ -1,0 +1,20 @@
+<apex:component >
+        <apex:attribute name="Mycity" type="String" required="true" 
+				description="Provides City VAlue"/>
+        <apex:attribute name="txtcolor" type="String" required="true" 
+				description="Provides text color"/>
+        <apex:attribute name="bgcolor" type="String" required="true" 
+				description="Provides border color"/>
+        <apex:attribute name="borderwidth" type="Integer" required="true" 
+				description="Provides width of border"/>
+	
+    <H1 style="color:{!txtcolor};background-color:{!bgcolor};border-width:{!borderwidth}">
+                    <center>
+                    <apex:outputText >
+                        		From Component3 ::{!Mycity}
+
+   					</apex:outputText>
+
+        </center>
+    </H1>
+</apex:component>

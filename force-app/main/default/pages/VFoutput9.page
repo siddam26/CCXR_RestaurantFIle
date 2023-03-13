@@ -1,0 +1,19 @@
+<apex:page standardController="account">
+    <apex:form >
+        <font size="3">
+        <apex:inlineEditSupport />
+        Account Name using OutPut Text ::<apex:outputText >{!Account.name}</apex:outputText> <br/>
+        Account Name using OutPut Textvalue ::<apex:outputText value="{!Account.name}"/> <br/>
+        Using OutPut label ::<apex:outputLabel > This is Output by label</apex:outputLabel> <br/>
+        Using OutPut Panel ::
+        <apex:outputPanel >
+        Account Name using OutPut Text ::<apex:outputText >{!Account.name}</apex:outputText> <br/>
+        Account Name using OutPut Text ::<apex:outputText value="{!Account.name}"/> <br/>
+        </apex:outputPanel>
+        Using OutPut Link  ::<apex:outputLink value="https://www.google.co.in/"> Click On Google Link</apex:outputLink> <br/>
+        <br/>
+            Name Using Output fieldvalue :: <apex:outputLabel value="{!Account.name}"></apex:outputLabel><br/>
+        Industry Using Output fieldvalue :: <apex:outputLabel value="{!Account.Industry}"></apex:outputLabel>
+        </font>
+    </apex:form>
+</apex:page>

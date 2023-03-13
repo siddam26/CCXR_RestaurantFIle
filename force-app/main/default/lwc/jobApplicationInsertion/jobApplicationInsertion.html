@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:display_text" size="small"></lightning-icon>
+            JobApplication Creation Using Apex
+        </h3>
+            <div slot="footer">
+<lightning-button label="Create JobApplication" onclick={handleSaveAccount} variant="brand"></lightning-button>
+<lightning-badge label={accountId}></lightning-badge>
+<lightning-badge label={error} ></lightning-badge> 
+</div>
+<p class="slds-p-horizontal_small">
+
+    <lightning-input type="text" label="Position" value={accountRecord.Position__c} onchange={handleNameChange}></lightning-input>
+    <lightning-input type="text" label="Candidate" value={accountRecord.Candidate__c} onchange={handleTypeChange}></lightning-input>
+    <lightning-input type="phone" label="Status" value={accountRecord.Status__c} onchange={handlePhoneChange}></lightning-input>
+
+</p>
+        
+    </lightning-card>
+</template>

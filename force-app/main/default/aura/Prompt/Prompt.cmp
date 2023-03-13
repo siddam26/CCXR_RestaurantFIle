@@ -1,0 +1,4 @@
+<aura:component>
+    <aura:import library="lightning:prompt" property="LightningPrompt" />
+    <lightning:button onclick="{! c.openPrompt }" label="Open Prompt"/>
+</aura:component>

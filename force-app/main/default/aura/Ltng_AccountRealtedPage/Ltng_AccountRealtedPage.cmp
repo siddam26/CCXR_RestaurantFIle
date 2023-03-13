@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="fields" type="String[]" default="['Name','AnnualRevenue','Industry','Rating','CurrencyIsoCode','AccountNumber','OwnerId','RecordTypeId','Site','AccountSource','Active_c','PersonAssistantName','PersonAssistantPhone','Region_c','BillingAddress','ShippingAddress']" />
+    <lightning:notificationslibrary aura:id="notify"/>
+    
+    <div class="slds-box slds-box_Large" >
+   <lightning:tabset selectedTabId="two">
+        <lightning:tab label="Related" id="one">
+          <c:Prompt/>
+    
+        </lightning:tab>
+        <lightning:tab label="Detail" id="two">
+           <c:SelectTag/>
+        </lightning:tab>
+        <lightning:tab label="Item Three" id="three">
+            Three Content !
+        </lightning:tab>
+    </lightning:tabset>
+       
+    </div>
+</aura:component>

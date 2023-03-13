@@ -1,0 +1,11 @@
+<aura:component controller="PositionMaps" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	 <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer" />
+    <aura:attribute name="Location" type="String"/>
+    <aura:attribute name="center" type="Object" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <lightning:map 
+        mapMarkers="{! v.mapMarkers }" 
+                   center="{! v.center }"
+        zoomLevel="{!v.zoomLevel}" />
+</aura:component>

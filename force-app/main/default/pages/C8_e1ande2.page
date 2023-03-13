@@ -1,0 +1,16 @@
+<apex:page standardController="Position__c" recordSetVar="pos" extensions="C8_Extension1,C8_Extension2">
+    <apex:form >
+        {!hello}<br/>
+        {!hello2}
+    <apex:pageBlock title="Position Records">
+    
+        <apex:pageblockTable value="{!pos}" var="p">
+            <apex:column value="{!p.name}"/>
+            <apex:column value="{!p.Location__c}"/>
+            <apex:column value="{!p.Functional_Area__c}"/>
+        </apex:pageblockTable>
+        
+    </apex:pageBlock>
+        </apex:form>
+
+</apex:page>

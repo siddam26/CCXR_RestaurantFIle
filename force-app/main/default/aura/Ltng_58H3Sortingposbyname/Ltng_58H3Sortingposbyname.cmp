@@ -1,0 +1,17 @@
+<aura:component controller="Ltng_58H3sorting" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 <aura:attribute type="Position__c[]" name="posList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute name="sortedBy" type="String" default="Name"/>
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+      
+    <lightning:datatable 
+                         data="{!v.posList }"
+                         columns="{!v.mycolumns }"
+                         keyField="id"
+                         sortedDirection="{!v.sortDirection}"
+                         defaultSortDirection="{!v.defaultSortDirection}"
+                         sortedBy="{!v.sortedBy}"
+                         />
+</aura:component>

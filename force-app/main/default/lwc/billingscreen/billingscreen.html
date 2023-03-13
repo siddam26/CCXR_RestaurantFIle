@@ -1,0 +1,42 @@
+<template>
+   <lightning-card>
+
+    <lightning-record-view-form
+    object-api-name="CCXR_Order__c"
+    record-id={recordId}
+>
+
+<div class="slds-grid slds-gutters">
+  <div class="slds-col">
+  <span><lightning-output-field field-name={Datetime}></lightning-output-field></span>
+  </div>
+  <div class="slds-col">
+  <span><lightning-output-field field-name={Name}> </lightning-output-field></span>
+  </div>
+  <div class="slds-col">
+  <span><lightning-output-field field-name={Customer}> </lightning-output-field></span>
+  </div>
+  <div class="slds-col">
+  <span><lightning-output-field field-name={Table}> </lightning-output-field></span>
+  </div>
+  </div>
+
+ <lightning-datatable  data={Orderlineitems} 
+   columns={columns} 
+  key-field="Id">
+
+</lightning-datatable>
+<div class="slds-text-align_right">
+    <p slot="footer">
+                    <b>
+                    <lightning-output-field field-name={grandtotal}> </lightning-output-field> 
+                    <lightning-output-field field-name={Tax}> </lightning-output-field>
+                    <lightning-output-field field-name={Discount}> </lightning-output-field>
+                    <lightning-output-field field-name={Nettotal}> </lightning-output-field></b>
+                </p>
+            </div>
+</lightning-record-view-form>
+                        </lightning-card>
+                        
+
+</template>

@@ -1,0 +1,29 @@
+<aura:component>
+   
+    <aura:attribute name="stepIndex" type="Integer" default="0"/>
+    <div>
+        <lightning:progressIndicator currentStep="step2">
+            <lightning:progressStep label="Step One" value="step1"/>
+            <lightning:progressStep label="Step Two" value="step2"/>
+            <lightning:progressStep label="Step Three" value="step3"/>
+        </lightning:progressIndicator>
+    </div><br/><br/><br/>
+    <div>
+        <lightning:progressIndicator type="path"  currentStep="step2">
+            <lightning:progressStep label="Step One" value="step1"/>
+            <lightning:progressStep label="Step Two" value="step2"/>
+            <lightning:progressStep label="Step Three" value="step3"/>
+        </lightning:progressIndicator>
+    </div><br/><br/><br/>
+    <div>
+        
+        <lightning:progressIndicator currentStep="step1">
+            <lightning:progressStep label="Step One1" value="step1" onstepmouseenter="{!c.handleStepBlur}"/>
+            <lightning:progressStep label="Step Two2" value="step2" onstepfocus="{!c.onstepfocus}"/>
+            <lightning:progressStep label="Step Three3" value="step3" onstepblur="{!c.handleStepBlur}"/>
+        </lightning:progressIndicator>
+        
+    </div>
+    
+    
+</aura:component>

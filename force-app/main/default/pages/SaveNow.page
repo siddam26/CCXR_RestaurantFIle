@@ -1,0 +1,5 @@
+<apex:page controller="WizardClass">
+    <font size="5" color="Blue">
+        Records inserted succesfully
+    </font>
+</apex:page>

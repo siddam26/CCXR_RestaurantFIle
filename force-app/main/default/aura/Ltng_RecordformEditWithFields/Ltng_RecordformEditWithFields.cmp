@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+
+    
+    <p>Record Edit Form</p>
+    <lightning:recordEditForm
+                          
+                          objectApiName="Account"
+                          recordId="{!v.recordId}">    
+        <lightning:outputField fieldName="Name" />
+        <lightning:inputField fieldName="AnnualRevenue"/>
+        <lightning:inputField fieldName="Industry" />
+        <lightning:inputField fieldName="Phone"/>
+        
+        <lightning:button  class="slds-m-top_small"  variant="brand" label="update" name="Update" type="submit" />
+    </lightning:recordEditForm>
+</aura:component>

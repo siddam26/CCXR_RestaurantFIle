@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="ParentAttribute" type="string" default="from parent"/>
+    <div>
+        Calling child component without params::<br/><br/>
+        <c:Ltng_AttributePassing4/>
+        Parent attribute value::<br/><br/>
+        {!v.ParentAttribute}<br/><br/>
+    </div>
+    <div>
+        Calling child component with parameters::<br/><br/>
+        <c:Ltng_AttributePassing4 empcity="Banglore" Company="CommerceCX"/>
+    </div>
+        
+</aura:component>

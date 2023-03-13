@@ -1,0 +1,45 @@
+<apex:page > 
+    <script>
+    
+    
+    function multiplication()
+    {
+        var y = parseFloat(document.getElementById("{!$Component.form.myblock.num1}").value);
+        console.log(y);
+        var z = parseFloat(document.getElementById("{!$Component.form.myblock.num2}").value);
+        console.log(z);
+        if (!isNaN(y) && !isNaN(z))
+        {
+            var x = y * z;
+            console.log(x);
+            document.getElementById("{!$Component.form.outblock.demo}").innerHTML = x.toFixed(2);
+        }
+        
+    }
+    function division() 
+    {
+        var y = parseFloat(document.getElementById("{!$Component.form.myblock.num1}").value);
+        console.log(y);
+        var z = parseFloat(document.getElementById("{!$Component.form.myblock.num2}").value);
+        console.log(z);
+     
+            var x = y / z;
+            console.log(x);
+            document.getElementById("{!$Component.form.outblock.demo}").innerHTML = x.toFixed(2);
+        
+        
+    }
+    </script>
+    <apex:form id="form">
+        <apex:pageBlock id="myblock">
+            Number1 : <apex:inputText id="num1"/><br/><br/>
+            Number2 : <apex:inputText id="num2" /><br/><br/>
+            <apex:commandButton value="Multiplication" onclick="multiplication()"/>
+            <apex:commandButton value="Division" onclick="division()"/>
+        </apex:pageBlock>
+        <apex:pageBlock id="outblock" >
+            <apex:outputLabel > Math Result: </apex:outputLabel><br/><br/>
+            <apex:pageBlockSection id="demo"></apex:pageBlockSection>
+        </apex:pageBlock>       
+    </apex:form>
+</apex:page>

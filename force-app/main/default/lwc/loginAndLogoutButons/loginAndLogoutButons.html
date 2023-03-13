@@ -1,0 +1,17 @@
+<template>
+    <h1>
+        <lightning-card title="LoginAndLogout Rendering">
+            <lightning-button  disabled={checkSubmit} variant="button" label="Login" onclick={loginlick}></lightning-button>
+                <lightning-button  disabled={checkSubmit1} variant="button" label="Logout" onclick={logoutlick}></lightning-button>
+                
+
+            
+            <template if:true={checkSubmit}>
+                <div>login is disabled</div>
+            </template>
+            <template if:true={checkSubmit1}>
+                <div>logout is disabled</div>
+            </template>
+        </lightning-card>
+    </h1>
+</template>

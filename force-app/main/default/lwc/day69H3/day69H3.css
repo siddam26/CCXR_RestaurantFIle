@@ -1,0 +1,16 @@
+.class
+{
+    color: var(--lwc-brandAccessible);
+    background-color: var(--lwc-colorBackgroundCustomert);
+}
+.class2  
+{
+    color: var(--lwc-brandAccessible);
+    background-color: var(--lwc-colorBackgroundCustomert);
+
+}
+div
+{
+    background-color: var(--lwc-brandDark);
+    margin-right: var(--lwc-spacingSmall);
+}

@@ -1,0 +1,6 @@
+<apex:page controller="printingnumbersusingfunctionsandvf">
+    <font size="4">
+    {!str1}<br/>
+    {!add}
+    </font>
+</apex:page>

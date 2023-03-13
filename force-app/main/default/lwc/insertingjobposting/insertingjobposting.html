@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Job POsting Creation" icon-name="standard:account">
+        <div class="slds-var-p-around_x-small">
+            <lightning-input value={recAccount.Name} label="Employement website" onchange={handelNamechange}></lightning-input>
+            <lightning-input value={recAccount.Phone} label="Position" onchange={handelPhonechange}></lightning-input>
+            <lightning-button label="Save" onclick={createAccRec} variant="success"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

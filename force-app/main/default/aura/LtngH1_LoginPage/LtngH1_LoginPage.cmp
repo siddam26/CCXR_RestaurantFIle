@@ -1,0 +1,52 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+      <div class="slds-grid slds-gutters slds-align_absolute-center" style="height:95vh">
+        <div class="slds-col">
+            <span> </span>
+        </div>
+        
+        <div class="slds-col ">
+            
+            
+            <div class="slds-box slds-box_small" style="background-color:white ; height:300px">
+                
+                <p class="all">User Name</p> <br/>
+                <input type="string" label="User Name" placeholder="Enter User Name" class="slds-input" /> <br/>
+                
+                <span>
+                    <br/>
+                </span>
+                <p class="all">Password</p>  <br/>
+                <input type="string" label="Password" placeholder="Enter Password" class="slds-input" /> <br/>
+                
+                <span>
+                    <br/>
+                </span>
+                
+                <div class="slds-form-element">
+                    
+                    <button class="slds-button slds-button_success">Log In</button>
+                </div>
+                
+                <br/> <br/>
+                <div class="slds-checkbox">
+                    <input type="checkbox" name="options" id="checkbox-unique-id-81" value="checkbox-unique-id-81" unchecked="true" />
+                    <label class="slds-checkbox__label" for="checkbox-unique-id-81">
+                        <span class="slds-checkbox_faux"></span>
+                        <span class="slds-form-element__label">  Remember me</span>
+                    </label>
+                </div>
+                
+                <br/>
+                <br/>
+                
+                <div>
+                
+                    <lightning:formattedUrl  value="https://login.salesforce.com/secur/forgotpassword.jsp?" label="Forget Your Password?" target="_blank" />
+                
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <p class="credits"> © 2022 salesforce.com, inc. All rights reserved. | Privacy</p>
+</aura:component>

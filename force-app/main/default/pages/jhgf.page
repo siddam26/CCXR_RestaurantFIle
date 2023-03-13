@@ -1,0 +1,18 @@
+<apex:page standardController="account" recordSetVar="accs">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBLockTable value="{!accs}" var="a">
+                    <apex:column headerValue="Account Name" >
+                        <apex:commandLink value="{!a.name}">
+                            <apex:param name="aid" value="{!a.id}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                </apex:pageBLockTable>
+                <apex:pageBlock >
+                    <apex:detail subject="{!$CurrentPage.parameters.aid}" relatedList="false"/>
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:form>	
+    </apex:page>

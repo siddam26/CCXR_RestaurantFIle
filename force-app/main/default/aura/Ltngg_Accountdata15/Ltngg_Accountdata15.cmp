@@ -1,0 +1,14 @@
+<aura:component controller="Ltngg_Accountdata15Controller">
+    <aura:attribute name="Accounts" type="list"/>
+    <aura:attribute name="Sindustry" type="String"/>
+    <lightning:input name="Industry" label="Industry" placeholder="Input industry to search" value="{!v.Sindustry}" />
+    <lightning:button variant="success" label="Get Account records" title="Accounts" onclick="{!c.searchaccounts}"/>
+                       
+    Account info::<br/><br/><br/>
+    <aura:iteration items="{!v.Accounts}" var="a"><br/><br/>
+        Account name::{!a.Name}<br/>
+        Account Industry::{!a.Industry}<br/>
+        Account phone::{!a.Phone}<br/>
+    </aura:iteration>
+	
+</aura:component>

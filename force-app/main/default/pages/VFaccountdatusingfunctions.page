@@ -1,0 +1,24 @@
+<apex:page standardController="Account" id="pg1">
+    <apex:form id="fm1">
+    <apex:inputHidden value="{!Account.Name}" id="n1"/>
+    <apex:inputHidden value="{!Account.Industry}" id="n2"/>
+    <apex:commandButton value="GetName" onclick="showName()"/>
+    <apex:commandButton value="GetIndustry" onclick="showIndustry()"/>
+    
+        <script>
+        function showName()
+        {
+        	var name=document.getElementById('{!$Component.pg1.fm1.n1}').value;
+            alert(name);
+            alert('Hi');
+        }
+        function showIndustry()
+        {
+        	var industry=document.getElementById("pg1:fm1:n2").value;
+            alert('Bye');
+            alert(Industry);
+        }
+        
+        </script>
+    </apex:form>
+</apex:page>

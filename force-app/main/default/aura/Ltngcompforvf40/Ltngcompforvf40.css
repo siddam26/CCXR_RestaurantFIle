@@ -1,0 +1,22 @@
+.THIS {
+    
+    background-color:token(bg);
+    font-size:token(size1);
+    color:token(color1);
+}
+.THIS .a1
+{
+    background-color:token(bg);
+    font-size:token(size2);
+    color:token(color2);
+}
+.THIS .b1
+{
+    background-color:token(bg1);
+    font-size:token(size3);
+}
+.THIS .c1
+{
+    background-color:token(bg2);
+    font-size:token(size4);
+}

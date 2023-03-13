@@ -1,0 +1,57 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:account" alternative-text="Event" size="small"></lightning-icon>
+            &nbsp;Insert Multiple Positions
+        </h3>
+        <div slot="footer">
+            <lightning-button label="Add" variant="brand" onclick={addRow}>
+            </lightning-button>&nbsp;
+            <lightning-button label="Save" variant="brand" onclick={saveMultipleAccounts}>
+            </lightning-button>
+        </div>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="S.No">S.No</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="PositionTitle">Position Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="PositionStatus">Position Status</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="PositionFunctionalArea">Position FunctionalArea</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="MinPay">Position Minpay</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody >
+                <template for:each={accountRecList} for:item="pos" for:index="index">
+                    <tr key={keyIndex}>
+                        <td>{index}</td>
+                        <td>
+                            <lightning-input name="posName" access-key={index} id={index} type="text" onchange={changeHandler} value={pos.Name}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input name="PosStatus" access-key={index} id={index} type="text" onchange={changeHandler} value={pos.Status__c}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input name="PosFunctionalArea" access-key={index} id={index} type="text" onchange={changeHandler} value={pos.Functional_Area__c}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input name="PosMinPay" access-key={index} id={index} type="currency" onchange={changeHandler} value={pos.Min_Pay__c}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-icon icon-name="action:delete" access-key={index} id={index} alternative-text="Click to call" size="small" title="large size" onclick={removeRow}></lightning-icon>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

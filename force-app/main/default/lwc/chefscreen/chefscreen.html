@@ -1,0 +1,12 @@
+<template>
+    <lightning-card class="card" title="Account List From Apex" >
+            <div class="slds-m-around_medium">
+                <h2> chef screen</h2>
+                <template if:true={accountList}>
+                    <lightning-datatable data={accountList} columns={columns} key-field="Id">
+                    </lightning-datatable>
+                </template>
+            </div>
+        </lightning-card>
+ 
+</template>

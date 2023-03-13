@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="recordFieldToQuery" type="Object" />
+    <aura:attribute name="recordError" type="String" />
+   
+    <force:recordData
+                      aura:id="saveRecord"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      mode="EDIT"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.recordFieldToQuery}"
+                      targetError="{!v.recordError}"
+                      />
+    <b> View Account Using Force:recordData</b><br/>
+    <lightning:card iconName="standard:account" title="View Account" >
+        <p>
+            <lightning:formattedText title="Account Name" value="{!v.recordFieldToQuery.Name}" />
+            <lightning:input label="Account Industry" value="{!v.recordFieldToQuery.Industry}" />
+            <lightning:input label="Account Phone" value="{!v.recordFieldToQuery.Phone}" />
+        </p>
+        <aura:set attribute="footer">
+          <lightning:formattedText title="Account website" linkify="true" value="{!v.recordFieldToQuery.Website}" />
+        </aura:set>
+        <lightning:button label="Save Account" variant="success" onclick="{!c.saveacc}" />
+    </lightning:card>
+</aura:component>

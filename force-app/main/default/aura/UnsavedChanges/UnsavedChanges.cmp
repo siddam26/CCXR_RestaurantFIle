@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="accountname" type="String"/>
+    <aura:handler name="change" value="{!v.accountname}" action="{!c.makeUnsavedChanges}"/>
+    <lightning:unsavedChanges aura:id="unsaved"
+                              onsave="{!c.handleSave}"
+                              ondiscard="{!c.handleDiscard}" />
+    <lightning:input name="account" label="accountname" value="{!v.accountname}"/>
+    <lightning:button label="Make Unsaved Changes" onclick="{!c.makeUnsavedChanges}" />
+    <lightning:button label="Clear Unsaved Changes" onclick="{!c.clearUnsavedChanges}" />
+</aura:component>

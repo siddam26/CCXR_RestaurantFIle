@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute name="name" type="String" default="shashank"/>
+    <aura:attribute name="age" type="Integer" default="20"/>
+    <aura:attribute name="salary" type="Integer" default="15000"/>
+    
+    
+    
+    <b>
+        values from parent::<br/>
+        name={!v.name}<br/>
+        age=::{!v.age}<br/>
+        salary::{!v.salary}
+    </b>
+    <lightning:button  variant="brand" label="call child method" onclick="{!c.gotoaura}"/><br/>
+    <c:Ltng_Childcomp aura:id="aurachild"/>
+	
+</aura:component>

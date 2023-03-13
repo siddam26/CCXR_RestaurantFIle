@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Using Iterator">
+    <h1>Using Unordered list</h1>
+    <div class="slds-var-m-around_medium">
+        <template iterator:emp={emplist}>
+            <div key={emp.value.id}>
+                <ul>
+                    <template if:true={emp.first} >
+                    <div class="slds-var-m_around">
+                         <strong>List Of Employees</strong>
+                    </div>
+
+                </template>
+                <li>
+                    <strong>
+                        EmpID:{emp.value.Id}
+                    </strong>
+                </li>
+                <li>
+                    <strong>
+                        EmpName:{emp.value.ename}
+                    </strong>
+                </li>
+                <li>
+                    <strong>
+                        EmpSalary:{emp.value.Esalary}<br/>
+                    </strong>
+                </li><br/><br/><br/>
+                <template if:true={emp.last}>
+                    <div class="slds-var-m_around">
+                        <strong>
+                            End Of EmpList
+                        </strong>
+                    </div>
+                </template>
+            </ul>
+            </div>
+        </template>
+    </div>
+</lightning-card>
+</template>

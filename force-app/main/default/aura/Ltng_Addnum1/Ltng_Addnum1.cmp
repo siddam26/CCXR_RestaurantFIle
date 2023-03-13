@@ -1,0 +1,22 @@
+<aura:component>
+<aura:attribute name="Fnumber" type="Integer" />
+    <aura:attribute name="Snumber" type="Integer"/>
+    <aura:attribute name="Result" type="Integer"/>
+    
+        <lightning:input name="First Number" label="Enter First Number" required="true" value="{!v.Fnumber}"/>
+        <lightning:input name="Second Number" label="Enter Second Number" required="true" value="{!v.Snumber}"/>
+        <lightning:input name="Result"  required="true" value="{!v.Result}"/>
+        <lightning:button variant="success" label="ADD" title="Adding" onclick="{!c.addnum1}"/>
+    	<lightning:button variant="success" label="SUBTRACT" title="Add" onclick="{!c.subnum1}"/>
+    	<lightning:button variant="success" label="MULTIPLY" title="Add" onclick="{!c.Mulnum1}"/>
+    	<lightning:button variant="success" label="DIVISION" title="Add" onclick="{!c.Divnum1}"/>
+        
+        
+   <div>
+      
+       first number:{!v.Fnumber};<br/>
+       Second Number:{!v.Snumber};<br/>
+       Result={!v.Result}
+       
+    </div>  
+    </aura:component>

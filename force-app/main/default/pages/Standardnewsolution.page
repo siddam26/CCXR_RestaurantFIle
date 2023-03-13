@@ -1,0 +1,25 @@
+<!--2.Write visual force code to design like standard New Solution Record creation page.-->
+<apex:page standardController="Solution" >
+    <apex:form >
+        <apex:pageBlock title="Solution Edit"  mode="edit" >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!Save}"/>
+                <apex:commandButton action="{Save&New}" value="Save & New"  />
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                 </apex:pageBlockButtons>
+                 
+                           <apex:pageBlockSection title="Solution Information" showHeader="true" >
+                            <apex:inputField value="{!Solution.CurrencyIsoCode}" /><br/>
+                            <apex:inputField value="{!Solution.SolutionName}" /><br/>
+                            <apex:inputField value="{!Solution.SolutionNote}" /><br/>
+                             
+                            </apex:pageBlockSection>
+                           
+            
+            
+            
+            
+            </apex:pageBlock>
+    </apex:form>>
+    
+</apex:page>

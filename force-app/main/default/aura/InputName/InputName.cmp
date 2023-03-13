@@ -1,0 +1,30 @@
+<aura:component>
+    <aura:attribute name="salutationOptions" type="List" default="[
+        {'label': 'Mr.', 'value': 'Mr.'},
+        {'label': 'Ms.', 'value': 'Ms.'},
+        {'label': 'Mrs.', 'value': 'Mrs.'},
+        {'label': 'Dr.', 'value': 'Dr.'},
+        {'label': 'Prof.', 'value': 'Prof.'},]"/>
+    <div>
+        <lightning:inputName
+            label="Default Input Name Field"
+            readonly="true"
+           
+            firstName="John"
+            middleName="Middleton"
+            lastName="Doe"
+            informalName="Jo"
+            suffix="The 3rd"
+            salutation="Mr."
+            options="{!v.salutationOptions}"
+                             />               
+    </div>
+    
+    
+</aura:component>
+
+<!--required="true" --> <!--if you want the fields to be mnadtory you must keep required=true-->
+<!--disabled="true"--> <!--if you  dont want o edit the values the vlaues after entering the values you can use disabled ==true ==true-->
+ <!--readonly="true"--> <!--this is same as disabled but in this you  can edit salutation-->
+
+<!--Inputname-->

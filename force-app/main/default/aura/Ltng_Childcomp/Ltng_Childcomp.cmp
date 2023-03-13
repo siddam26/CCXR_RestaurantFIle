@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute name="Mname1" type="String"/>
+    <aura:attribute name="Mage2" type="Integer"/>
+    <aura:attribute name="Msalary3" type="Integer"/>
+    <aura:method name="testmethod" action="{!c.childaction}" description="Aura with param">
+     <aura:attribute name="Mname" type="String"/>
+    <aura:attribute name="Mage" type="Integer"/>
+    <aura:attribute name="Msalary" type="Integer"/>
+    </aura:method>
+	<b>
+        values from child::<br/>
+        name={!v.Mname1}<br/>
+        age=::{!v.Mage2}<br/>
+        salary::{!v.Msalary3}
+
+    </b>
+</aura:component>

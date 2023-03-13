@@ -1,0 +1,50 @@
+<template>
+    <h1>For Loop Example</h1>
+    <lightning-card title="For Loop Example">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <h1>For Loop O/P using div</h1>
+        <div class="slds-var-m-around_medium">
+            <template for:each={namelist}
+                      for:item="name"
+                      >
+                      <div key={name}>{name}</div>
+                    </template>
+        </div>
+        <h1>For loop O/P using Unorder list</h1>
+        <div class="slds-var-m-around_medium">
+            <template for:each={namelist}
+                      for:item="name"
+                      >
+                      <ul key={name} class="slds-list_dotted">
+                        <li>{name}</li>
+
+                      </ul>
+                    </template>
+        </div>
+        <h1>For Loop using Ordered List</h1>
+        <div class="slds-var-m-around_medium">
+            <template for:each={namelist}
+                      for:item="name"
+                      >
+                      <ol key={name} class="slds-list_ordered">
+                        <li>{name}</li>
+
+                      </ol>
+                    </template>
+        </div>
+        <h1>Printing Names using UpperCase</h1>
+        <div class="slds-text-title--caps">
+            <template for:each={namelist}
+                      for:item="name"
+                      >
+                      <ol key={name} class="slds-list_ordered">
+                        <li>{name}</li>
+
+                      </ol>
+                    </template>
+        </div>
+
+
+
+    </lightning-card>
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Accounts With Type Prospect">
+        <template for:each={acc1}
+        for:item="acc">
+        <ol key={acc.id} class="slds-list_ordered">
+            <li>{acc.Name}</li>
+            <li>{acc.Type}</li>
+            <li>{acc.Industry}</li>
+            </ol>
+        
+    </template>  
+     </lightning-card>  
+     <lightning-card title="Accounts With Type Customer-Direct">
+        <template for:each={acc2}
+        for:item="acc">
+        <ul key={acc.id} class="slds-list_dotted">
+            <li>{acc.Name}</li>
+            <li>{acc.Type}</li>
+            <li>{acc.Industry}</li>
+            </ul>
+        
+    </template>  
+     </lightning-card>
+</template>

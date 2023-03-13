@@ -1,0 +1,33 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+
+    <p>Record Edit Form</p>
+    <div class="slds-grid slds-gutters">
+    <div class="slds-col">
+    <lightning:recordEditForm
+                          aura:id="myAccountForm"
+                          objectApiName="Job_Application__c"
+                          recordId="{!v.recordId}">   
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-5">
+               <lightning:outputField fieldName="Name" />
+            </div>
+         <div class="slds-col slds-size_2-of-5">
+                <lightning:inputField fieldName="Candidate__c"/>
+            </div>
+        
+            <div class="slds-col slds-size_3-of-5">
+                <lightning:outputField fieldName="Position__c" />
+            </div>
+             <div class="slds-col slds-size_4-of-5">
+                <lightning:outputField fieldName="Status__c"/>
+            </div>
+        
+        
+       
+        <lightning:button variant="brand" label="Save" name="Save" type="submit" title="save"/>
+        </div>
+    </lightning:recordEditForm>
+        
+        </div>
+    </div>
+</aura:component>

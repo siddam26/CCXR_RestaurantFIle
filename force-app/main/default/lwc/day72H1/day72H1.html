@@ -1,0 +1,17 @@
+<template>
+    <lightning-card  title=" sorting Position records" >
+        <div class="card">
+            <h2> Position Datatable</h2>
+            <template if:true={data}>
+                <lightning-datatable 
+                data={data} 
+                columns={columns} 
+                sorted-direction={sortDirection}
+            sorted-by={sortedBy}
+            onsort={onHandleSort}
+                key-field="Id">
+                </lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>

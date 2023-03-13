@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+   
+ <aura:attribute name="fields" type="String[]" default="['Name','Status__c','Functional_Area__c','Job_Level__c',
+                                                        'Type__c','Max_Pay__c','Min_Pay__c',
+                                                        'Open_Date__c']" />
+  
+    <lightning:recordForm
+	    recordId="a025g000009fOHnAAM"
+        objectApiName="Position__c"
+        fields="{!v.fields}"
+        columns="2"
+        mode="edit"
+        />
+</aura:component>

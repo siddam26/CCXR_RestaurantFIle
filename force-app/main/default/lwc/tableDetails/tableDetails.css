@@ -1,0 +1,15 @@
+/* Container holding the image and the text */
+.container {
+    position: relative;
+  }
+  /* Top right text */
+  .text-block {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+ 
+  }

@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:method name="testmethod" action="{!c.childaction}" description="Aura with param">
+    <aura:attribute name="childAttr" type="String"/>
+    </aura:method>
+    
+</aura:component>

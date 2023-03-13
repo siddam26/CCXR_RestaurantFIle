@@ -1,0 +1,31 @@
+<apex:page standardController="Account">
+    <apex:form >
+        This is your new VFstandardactionbutton13<br/>
+        <apex:pageBlock title="block with page block buttons"><br/>
+          Account Name::  <apex:inputField value="{!Account.name}" /><br/>
+          Account Industry::  <apex:inputField value="{!Account.industry}" /><br/>
+           Account phone:: <apex:inputField value="{!Account.phone}" /><br/>
+           Account Active:: <apex:inputField value="{!Account.Active__c}" /><br/>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="QuickSave" action="{!QuickSave}"/>
+                <apex:commandButton value="Delete" action="{!Delete}"/>
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                <apex:commandButton value="Edit" action="{!Edit}"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+        <apex:pageBlock title="block with page block buttons"><br/>
+            Account Name::<apex:inputField value="{!Account.name}" /><br/>
+            Account Industry::<apex:inputField value="{!Account.industry}" /><br/>
+            Account phone::<apex:inputField value="{!Account.phone}" /><br/>
+            Account Active::<apex:inputField value="{!Account.Active__c}" /><br/>
+            <apex:pageBlockButtons location="Bottom">
+                <apex:commandButton value="QuickSave" action="{!QuickSave}"/>
+                <apex:commandButton value="Delete" action="{!Delete}"/>
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                <apex:commandButton value="Edit" action="{!Edit}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

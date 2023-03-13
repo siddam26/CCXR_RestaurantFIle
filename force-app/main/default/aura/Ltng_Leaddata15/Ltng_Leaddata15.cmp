@@ -1,0 +1,37 @@
+<aura:component controller="Ltng_Leaddata15Controller">
+    <aura:attribute name="Leads" type="list"/>
+    <aura:attribute name="Sindustry" type="String"/>
+    <div>
+    <lightning:input name="Industry" label="Industry" placeholder="Input industry to search" value="{!v.Sindustry}" />
+       </div>
+    <lightning:button variant="success" label="Get Lead records" title="Leads" onclick="{!c.searchleads}"/>
+                       
+    Lead info::<br/><br/><br/>
+    <div class="slds-grid slds-wrap">
+    <aura:iteration items="{!v.Leads}" var="l"><br/><br/>
+       <div class="slds-col slds-size_1-of-4 slds-p-around_medium"> 
+           <lightning:card>
+               <aura:set attribute="title">
+                   <lightning:icon iconName="standard:lead" size="small"/>
+                   {!l.Name}
+               </aura:set>
+               <aura:set attribute="footer">
+                   
+                   {!l.email}
+               </aura:set>
+               <aura:set attribute="actions">
+                   <Lightning:button variant="brand" label="detail" title="leads" onclick="{!c.searchleads}"/>
+               </aura:set>
+               <p>
+                   <b>{!l.Name}</b><br/>
+                   {!l.Industry}<br/>
+                   {!l.Phone}<br/>
+               </p>
+       
+                   
+               </lightning:card>
+        </div>
+    </aura:iteration>
+    </div>
+	
+</aura:component>

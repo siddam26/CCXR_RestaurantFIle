@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="EmpCity" type="String[]" default="['Mirzapur','Assam','Goa']"/>
+    <aura:attribute name="Empid" type="Set" default="[14,15,47,58]"/>
+   <br/><br/>
+    <aura:iteration items="{!v.EmpCity}" var="Ecity">
+        {!Ecity}<br/>
+    </aura:iteration>
+    <aura:iteration items="{!v.Empid}" var="Eid">
+        {!Eid}<br/>
+    </aura:iteration>
+  
+
+	
+</aura:component>

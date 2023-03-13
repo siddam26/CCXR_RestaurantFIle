@@ -1,0 +1,25 @@
+<aura:component >
+	<aura:attribute name="EmpName1" type="String" default="James" />
+    <aura:attribute name="DName" type="String" />
+	<aura:attribute name="CName" type="String" default="CCX"/>
+    <aura:attribute name="EmpAge1" type="Integer" default="25"/>
+    <aura:attribute name="Deptno" type="Integer" />
+    <aura:attribute name="Esalary" type="Decimal" />
+
+    <div>
+        <lightning:input name="Emp Name" value="{!v.EmpName1}" label="Employee Name"/>
+        <lightning:input name="DName" value="{!v.DName}" label="deptname"/>
+        <lightning:input name="CName" value="{!v.CName}" label="company"/>
+        <lightning:input type="number" name="empAge1" label="Employee Age" value="{!v.EmpAge1}"/>
+        <lightning:input type="number" name="deptno" label="Dept No" value="{!v.Deptno}"/>
+        <lightning:input type="number" name="esalary" label="salary" formatter="currency" value="{!v.Esalary}"/>
+    </div>
+    Display Information::<br/><br/><br/>
+   Employee Name:: {!v.EmpName1}<br/><br/>
+   Employee Dept Name:: {!v.DName}<br/><br/>
+   Employee Company Name:: {!v.CName}<br/><br/>
+   Employee Age:: {!v.EmpAge1}<br/><br/>
+   Employee Dept No:: {!v.Deptno}<br/><br/>
+   Employee Salary:: {!v.Esalary}
+
+</aura:component>

@@ -1,0 +1,12 @@
+<template>
+    <h1>
+        <lightning-card title="Toggle Rendering">
+            <lightning-input type="toggle" label="Display on true" onclick={toggleclick}>
+
+            </lightning-input>
+            <template if:true={istoggle}>
+                <div>Display toggle on true</div>
+            </template>
+        </lightning-card>
+    </h1>
+</template>

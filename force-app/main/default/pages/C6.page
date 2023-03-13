@@ -1,0 +1,13 @@
+<apex:page controller="c6">
+    <apex:form >
+        <apex:pageBlock title="List of Opportunities">
+            <Apex:commandbutton value="Open ops" action="{!openops}"/>
+                <Apex:commandbutton value="Closed ops" action="{!closedops}"/>
+                    <apex:pageblocktable value="{!ops}" var="o">
+                        <apex:column value="{!o.name}"/>
+                                     <apex:column value="{!o.stagename}"/>
+                                     </apex:pageblocktable>
+                        </apex:pageBlock>
+            </apex:form>
+                        
+                    </apex:page>

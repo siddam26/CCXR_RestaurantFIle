@@ -1,0 +1,47 @@
+<template>
+   <lightning-card title="CreateCustomerRecord" icon-name="standard:record">
+      <div class="slds-m-around_medium">
+         
+       <lightning-button variant="brand" label="Create Customer"
+                       title="Create Customer" onclick={showModalBox}>
+       </lightning-button>
+
+       &nbsp;
+       
+       <lightning-button variant="brand" label="All Customer"
+                       title="All Customer" onclick={AllCustomer}>
+       </lightning-button>
+       
+       <template if:true={customer}>
+        
+         <c-customer-status-table></c-customer-status-table>
+
+     </template>
+
+  <!-- popup start -->      
+  <template if:true={isShowModal}>
+
+       
+   <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+       
+        
+         <!-- popup body  -->
+         <c-customer-screen if:true={isShowModal}></c-customer-screen>
+         <!-- popup footer -->
+         <footer class="slds-modal__footer">
+            <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Close</button>
+         </footer>
+      
+      </div>
+   </section>
+   <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!-- popup end -->
+      </div>
+   
+  
+
+  
+</lightning-card>
+</template>

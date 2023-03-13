@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="Fnumber" type="Integer" default="25"/>
+    <aura:attribute name="Snumber" type="Integer" default="20"/>
+    <div>
+    First Number::{!v.Fnumber} <br/>
+    Second Number::{!v.Snumber}<br/>
+    
+        Addition Result={!add(v.Fnumber,v.Snumber)}<br/>
+        subtraction Result={!sub(v.Fnumber,v.Snumber)}<br/>
+        Multiplication Result={!mult(v.Fnumber,v.Snumber)}<br/>
+        Division Result={!div(v.Fnumber,v.Snumber)}
+        
+        </div>
+    
+   
+    
+    
+   
+	
+</aura:component>

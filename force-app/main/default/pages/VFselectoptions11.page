@@ -1,0 +1,47 @@
+<apex:page >
+    <apex:form >
+        This is Your new page::VFselections11<br/>
+        <font size ="2">
+            MultiSelect Picklist:::<br/>
+            <apex:selectList multiselect="true">
+                <apex:selectOption itemLabel="Jan" itemValue="January"/>
+                <apex:selectOption itemLabel="Feb" itemValue="February"/>
+                <apex:selectOption itemLabel="Mar" itemValue="March"/>
+                <apex:selectOption itemLabel="Apr" itemValue="April"/>
+                <apex:selectOption itemLabel="May" itemValue="May"/>
+                   
+            </apex:selectList>    
+        </font> <br/><br/><br/>
+        <font size ="3">
+            PickList:::<br/>
+            <apex:selectList >
+                <apex:selectOption itemLabel="Jan" itemValue="January"/>
+                <apex:selectOption itemLabel="Feb" itemValue="February"/>
+                <apex:selectOption itemLabel="Mar" itemValue="March"/>
+                <apex:selectOption itemLabel="Apr" itemValue="April"/>
+                <apex:selectOption itemLabel="May" itemValue="May"/>
+            </apex:selectList>
+        </font><br/><br/><br/>
+        <font size ="3">
+            Select checkBox:::<br/>
+            <apex:selectCheckboxes borderVisible="true" border="6" legendText="Select Month">
+               <apex:selectOption itemLabel="Jan" itemValue="January"/>
+                <apex:selectOption itemLabel="Feb" itemValue="February"/>
+                <apex:selectOption itemLabel="Mar" itemValue="March"/>
+                <apex:selectOption itemLabel="Apr" itemValue="April"/>
+                <apex:selectOption itemLabel="May" itemValue="May"/>     
+            </apex:selectCheckboxes>
+        </font><br/><br/><br/>
+        <font size ="3">
+            Select Radio:::<br/>
+            <apex:selectRadio border="4" borderVisible="true" legendText="Select a Radio Button">
+                 <apex:selectOption itemLabel="Jan" itemValue="January"/>
+                <apex:selectOption itemLabel="Feb" itemValue="February"/>
+                <apex:selectOption itemLabel="Mar" itemValue="March"/>
+                <apex:selectOption itemLabel="Apr" itemValue="April"/>
+                <apex:selectOption itemLabel="May" itemValue="May"/>
+            </apex:selectRadio>
+        </font><br/><br/>
+        
+    </apex:form>
+</apex:page>

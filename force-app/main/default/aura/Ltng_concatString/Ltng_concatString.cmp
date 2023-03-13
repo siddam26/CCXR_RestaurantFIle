@@ -1,0 +1,19 @@
+<aura:component >
+	
+    <aura:attribute name="FName" type="String" />
+    <aura:attribute name="LName" type="String" />
+    <aura:attribute name="FullName" type="String" />
+    
+    <div>
+        <lightning:input name="FirstName" value="{!v.FName}" placeholder="Enter your first name..." label="First Name" />
+        <lightning:input name="LastName" value="{!v.LName}" placeholder="Enter your first name..." label="Last Name" />
+        <lightning:input name="FullName" value="{!v.FullName}" placeholder="Enter your first name..." label="Full Name" />
+    
+        <lightning:button variant="brand" label="Final Name" title="Brand action" onclick="{!c.addString}" />
+        
+        Frist Name::{!v.FName}<br/>
+        Last Name::{!v.LName}<br/>
+        Full Name::{!v.FullName}<br/>
+    </div>
+    
+</aura:component>

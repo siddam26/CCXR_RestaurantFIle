@@ -1,0 +1,32 @@
+<template>
+    <lightning-card>
+        <template if:true={tables}>
+        <div class="slds-grid slds-wrap">
+            <template for:each={tables} for:item="table">
+                <div key={table.Id} class="slds-col slds-size_1-of-3 slds-p-around_medium">                   
+                    <lightning-card title={table.Name} >                   
+                        <div class="slds-align_absolute-center">
+                            <div class="container">
+                                <div class="text-block">
+                                    <h4><strong>{table.CCXR_Table_Status__c}</strong></h4>
+                                </div>
+                                <img src={table.Table_Image_Link__c} 
+                                     alt=" " 
+                                     height="100px" 
+                                     width="1000px">                               
+                                </div>
+                            </div>
+                    </lightning-card>
+                    <div class={statusClassName}>
+                        {message}
+                    </div>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:false={tables}>
+        <p>No Table found</p>
+    </template>
+</lightning-card>
+  
+</template>

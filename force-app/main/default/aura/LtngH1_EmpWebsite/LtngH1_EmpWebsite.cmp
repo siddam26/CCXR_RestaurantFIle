@@ -1,0 +1,9 @@
+<aura:component controller="LtngH1_JobPostingController" implements="force:lightningQuickAction,force:hasRecordId" >
+    <aura:attribute name="empid" type="String"/> 
+    <aura:attribute name="recordId" type="id"/>
+    <lightning:input label="empid" placeholder="Enter empid" value="{!v.empid}"/>
+	 <lightning:button variant="success" label="Create Job Positing"  onclick="{!c.createJob}"/> <br/>
+    
+     record Id:{!v.recordId}
+    
+</aura:component>

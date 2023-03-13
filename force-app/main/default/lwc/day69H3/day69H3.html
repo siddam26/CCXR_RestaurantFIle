@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Badge">
+        <lightning-button label="New" slot="actions">
+            </lightning-button>
+    
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                <!-- Badge: basic -->
+                <lightning-badge label="Alpha" icon-name="standard:event"></lightning-badge>
+                <lightning-badge label="Beta" icon-name="standard:email" icon-position="end"></lightning-badge>
+                <lightning-badge label="Gamma" icon-name="custom:custom11"></lightning-badge>
+
+            </div>
+          
+        </lightning-card>
+
+        <lightning-card title="Button Group">
+            <lightning-button label="New" slot="actions">
+                </lightning-button>
+        
+                <!-- Button Group:-->
+               <lightning-button-group>
+                <div>
+                
+                    <lightning-button label="Refresh"></lightning-button>
+                    <lightning-button label="Edit"></lightning-button>
+                    <lightning-button label="Save" icon-name="utility:save"></lightning-button>
+                    
+                </div>
+                    <lightning-button-menu alternative-text="Show menu" variant="border-filled">
+                        <lightning-menu-item label="Menu Item One" value="item1"></lightning-menu-item>
+                        <lightning-menu-item label="Menu Item Two" value="item2"></lightning-menu-item>
+                        <lightning-menu-item label="Menu Item Three" value="item3"></lightning-menu-item>
+                    </lightning-button-menu>
+                </lightning-button-group>
+
+        </lightning-card>
+
+        <lightning-card title="Lightning Path" icon-name="standard:sales_path">
+            
+                <lightning-button label="New" slot="actions">
+                </lightning-button>
+             <!-- Path:-->
+            <lightning-progress-indicator current-step={currentvalue} type="path" variant="base">
+                <lightning-progress-step label="New Application" value="1" onclick={pathHandler}></lightning-progress-step>
+                <lightning-progress-step label="Phone Screen" value="2" onclick={pathHandler}></lightning-progress-step>
+                <lightning-progress-step label="Review Resume" value="3" onclick={pathHandler}></lightning-progress-step>
+                <lightning-progress-step label="Hired" value="4" onclick={pathHandler}></lightning-progress-step>
+                <lightning-progress-step label="Rejected" value="5" onclick={pathHandler}></lightning-progress-step>
+            </lightning-progress-indicator>
+        </lightning-card>
+    
+</template>

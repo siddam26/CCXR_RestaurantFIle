@@ -1,0 +1,33 @@
+<apex:page Controller="WizardClass">
+    <apex:form >
+        <apex:pageBlock title="Review page">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Edit account info" action="{!gotopage1}" />
+                <apex:commandButton value="Edit Contact info" action="{!gotopage2}"/>
+                <apex:commandButton value="Edit opportunity info" action="{!gotopag3}"/>
+                <apex:commandButton value="Save" action="{!SaveNow}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="Account Information" columns="1">
+                <apex:outputField value="{!a.name}"/>
+                <apex:outputField value="{!a.industry}"/>
+                <apex:outputField value="{!a.phone}"/>
+                <apex:outputField value="{!a.Active__c}"/>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Information" columns="1">
+                <apex:outputField value="{!c.lastname}"/>
+                <apex:outputField value="{!c.email}"/>
+                <apex:outputField value="{!c.phone}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Opportunity Information" columns="1">
+                <apex:outputField value="{!o.Name}"/>
+                <apex:outputField value="{!o.Type}"/>
+                <apex:outputField value="{!o.StageName}"/>
+                <apex:outputField value="{!o.CloseDate}"/>
+            </apex:pageBlockSection>
+            
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

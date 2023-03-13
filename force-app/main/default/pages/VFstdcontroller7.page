@@ -1,0 +1,5 @@
+<apex:page standardController="account">
+    <p style="background-colour:tomato;">
+        <apex:detail />
+    </p>
+</apex:page>

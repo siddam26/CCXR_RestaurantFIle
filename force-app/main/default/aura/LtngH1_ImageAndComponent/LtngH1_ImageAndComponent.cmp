@@ -1,0 +1,16 @@
+<aura:component >
+	<aura:attribute name="Ch1" type="Boolean" default="False"/>
+    <aura:attribute name="Ch2" type="Boolean" default="True"/>
+    
+    <b>2.Create lightning page to conditionally render the component/Image.</b><br/><br/>
+    <div>
+    	<aura:if isTrue="{!v.Ch2}">
+          <c:Ltng_Addnum/>
+            <aura:set attribute="else">
+               <div>
+                   <img src="{!$Resource.Today1}" height="200" width="200" />
+                </div>
+            </aura:set>
+        </aura:if>
+    </div><br/><br/>
+</aura:component>

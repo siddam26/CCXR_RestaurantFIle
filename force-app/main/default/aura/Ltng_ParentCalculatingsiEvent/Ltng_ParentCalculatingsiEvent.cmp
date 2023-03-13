@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:handler name="reginChild" event="c:Ltng_CalculatingsiEvent" action="{!c.handle}"/>
+   <aura:attribute name='amount' type="integer"  />
+    <aura:attribute name='roi' type="integer" />
+    <aura:attribute name='noofyears' type="integer" />
+    <aura:attribute name="si" type="integer" />
+    <aura:attribute name="amounttoreturn" type="integer"/>
+
+   <c:Ltng_ChildCalculatingsiEvent/>
+    
+        <lightning:input name="si" label="SI"  value="{!v.si}"/>
+        <lightning:input name="amount to return" label="Amount including intrest"  value="{!v.amounttoreturn}"/>
+    <b>
+        {!v.amount}<br/>
+        {!v.amounttoreturn}<br/>
+    </b>
+    
+    
+    
+</aura:component>

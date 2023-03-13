@@ -1,0 +1,7 @@
+<apex:page standardController="Account" renderAs="pdf" >
+    Account Information:<br/>
+   Account name:{!Account.Name}<br/>
+    Account Industry:{!Account.Industry}<br/>
+    Account Name:{!Account.Phone}<br/>
+
+</apex:page>

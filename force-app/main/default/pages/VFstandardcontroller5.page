@@ -1,0 +1,9 @@
+<apex:page standardController="Account">
+    <font size="3">
+        this is your new page:VFcontroller5<br/>
+        Account Name::{!Account.name}<br/>
+        Account Industry::{!Account.Industry}<br/>
+        Account Phone::{!Account.Phone}<br/>
+        Account AnnualRevenuue::{!Account.AnnualRevenue}<br/>
+    </font>
+</apex:page>

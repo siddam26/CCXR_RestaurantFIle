@@ -1,0 +1,24 @@
+<aura:component controller="Ltng_58H4accnt" implements="force:hasRecordId">
+    <aura:attribute name="Accounts" type="list"/>
+    <aura:attribute name="Sindustry" type="String"/>
+    <aura:attribute name="columns" type="list" />
+    <lightning:select name="select" label="Select a Industry" required="true" value="{!v.Sindustry}">
+      
+        <option value="Education">Education</option>
+        <option value="Agriculture">Agriculture</option>
+        <option value="Banking">Banking</option>
+    </lightning:select>
+    <lightning:button variant="success" label="Get Account records" title="Accounts" onclick="{!c.searchaccounts}"/>
+                       
+    Account info::<br/><br/><br/>
+    <lightning:datatable
+                         keyField="id"
+                		data="{!v.Accounts }"
+                        columns="{!v.columns }" />
+	
+</aura:component>
+<!--  <aura:iteration items="{!v.Accounts}" var="a"><br/><br/>
+        Account name::{!a.Name}<br/>
+        Account Industry::{!a.Industry}<br/>
+        Account phone::{!a.Phone}<br/>
+    </aura:iteration>-->

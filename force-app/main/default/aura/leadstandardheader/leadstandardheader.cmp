@@ -1,0 +1,136 @@
+<aura:component >
+    <aura:attribute name="Leads" type="String"/>
+    <aura:attribute name="sIndustry" type="String"/>
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-lead">
+                            <lightning:icon iconName="standard:lead" />
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span>Leads</span>
+                                    <span class="slds-page-header__title slds-truncate" title="Recently Viewed"><u><b>Recently Viewed</b></u></span>
+                                </h1>
+                            </div>
+                            <div class="slds-page-header__name-switcher">
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                    <button class="slds-button slds-button_icon slds-button_icon-small" aria-haspopup="true" title="Switch list view">
+                                        <lightning:icon iconName="utility:down" size="small"/>
+                                        <span class="slds-assistive-text">Switch list view</span>
+                                    </button>
+                                    <button class="slds-button slds-button_icon slds-button_icon-more" aria-haspopup="true" title="List View Controls">
+                                        <lightning:icon iconName="utility:pin" size="small"/>
+                                        <span class="slds-assistive-text">List View Controls</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <ul class="slds-button-group-list">
+                            <li>
+                                <button class="slds-button slds-button_neutral">New</button>
+                            </li>
+                            <li>
+                                <button class="slds-button slds-button_neutral">Import</button>
+                            </li>
+                            <li>
+                                <button class="slds-button slds-button_neutral">Add to Campaign</button>
+                            </li>
+                            <li>
+                                <button class="slds-button slds-button_neutral">Change Status</button>
+                            </li>
+                            <li>
+                                <button class="slds-button slds-button_neutral">Change Owner</button>
+                            </li>
+                            <li>
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                    <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
+                                        <lightning:icon iconName="utility:down" size="xx-small"/>
+                                        <span class="slds-assistive-text">More Actions</span>
+                                    </button>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-page-header__row">
+            
+            <div class="slds-page-header__col-meta">
+                <p class="slds-page-header__meta-text">48+ items . Updated 25 minutes ago </p>
+            </div>
+            
+            
+            
+            <div class="slds-page-header__col-controls">
+                
+                <div class="slds-page-header__col-controls">
+                    
+                    <ul class="slds-button-group-list">
+                        
+                        <div class="slds-form-element__control">
+                           <lightning:input
+                                             aura:id="enter-search"
+                                             label="Enter To Search"
+                                             name="enter-search"
+                                             type="search"
+                                             />
+                        </div>
+                        
+                        <li>
+                            <div class="slds-page-header__control">
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                    <button class="slds-button slds-button_icon slds-button_icon-more" aria-haspopup="true" title="List View Controls">
+                                        <lightning:icon iconName="utility:settings" size="xx-small"/>
+                                        <span class="slds-assistive-text">List View Controls</span>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="slds-page-header__control">
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                    <button class="slds-button slds-button_icon slds-button_icon-more" aria-haspopup="true" title="Change view">
+                                        <lightning:icon iconName="utility:table"  size="xx-small"/>
+                                        <span class="slds-assistive-text">Display as Table</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slds-page-header__control">
+                                <button class="slds-button slds-button_icon slds-button_icon-border-filled" title="Edit List">
+                                    <lightning:icon iconName="utility:refresh" size="x-small"/>
+                                    <span class="slds-assistive-text">Refresh</span>
+                                </button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slds-page-header__control">
+                                <button class="slds-button slds-button_icon slds-button_icon-border-filled" title="Refresh List">
+                                    <lightning:icon iconName="utility:edit" size="x-small"/>
+                                    <span class="slds-assistive-text">Edit List</span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </div>   
+</aura:component>

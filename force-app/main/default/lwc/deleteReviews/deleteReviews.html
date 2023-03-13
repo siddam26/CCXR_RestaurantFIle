@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <strong>
+           
+            Mass Delete Review records
+        </strong>
+        <div slot="footer">
+            <lightning-button  label="Delete" variant="brand" onclick={deleteSelRecords}>
+            </lightning-button>
+            <div>
+                    {message}
+            </div>
+        </div>            
+        <p class="slds-p-horizontal_small">            
+            <lightning-datatable data={reviews.data} columns={columns} key-field="id" onrowselection={prepareSelectedRows}>
+
+            </lightning-datatable>  
+        </p>   
+    </lightning-card>
+</template>
