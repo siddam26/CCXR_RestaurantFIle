@@ -54,18 +54,20 @@
                     </div>-->
 
                
-            
+ <!--Table-->           
                 <lightning-tab label="Tables" icon-name={iconName3}>
                     Table ! <br/>
-                      <c-table-screen></c-table-screen>
-                </lightning-tab>
+                      <c-table-screen> 
 
-            <template if:true={itmList}>
+                      </c-table-screen>
+                </lightning-tab>
+<!--Add Items-->
+           
                 <lightning-tab label="Items" icon-name={iconName4}>
-                     
+                    <c-ccr-items-content></c-ccr-items-content>
+                   
                         
                      <!-- <c-ccr-r-s if:true={showAddItem2Component}> </c-ccr-r-s>-->
-                    <c-main-menu ></c-main-menu>
                       <!-- <div class="slds-grid slds-wrap">
                         <template for:each={itmList} for:item="itm">
                             <div key={itm.Id} class="slds-col slds-size_1-of-2 slds-p-around_medium">
@@ -101,7 +103,7 @@
                     </div>-->
                
                 </lightning-tab>
-            </template>
+            
             
      </lightning-tabset>
     </lightning-card>

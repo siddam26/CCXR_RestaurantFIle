@@ -20,7 +20,7 @@ export default class CcrRS extends LightningElement {
 
     @track showModalBox1 = false;
     showComp1() {
-    this.showModalBox1 = true;
+        this.showModalBox1 = true;
     }
     
     itmList = [

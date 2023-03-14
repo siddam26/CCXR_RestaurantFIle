@@ -33,13 +33,12 @@ export default class Cheforderscreen extends LightningElement {
       getAccountNames()
       .then(result => {
         this.accountOptions = result.map(account => ({
-          label: account.CCXR_Table__c,
+          label: account.Name,
           value: account.Id
         }));
       })
       
     }
-    
 
     
 }

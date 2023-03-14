@@ -1,0 +1,21 @@
+.THIS.my-card {
+    /* Card background color */
+    background-color: red;
+  
+    /* Card border */
+    border: 1px solid #0f110f5b;
+  
+    /* Card padding */
+    padding: 20px;
+  }
+  
+ .THIS.my-content {
+    /* Content font size */
+    font-size: 16px;
+  
+    /* Content color */
+    color: #333;
+  
+    /* Content margin */
+    margin: 10px;
+  }

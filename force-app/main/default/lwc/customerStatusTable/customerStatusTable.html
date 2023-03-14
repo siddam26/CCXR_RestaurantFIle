@@ -34,18 +34,26 @@
                       <td data-label="cusname">
                           <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Customer__r.CCXR_Name__c}</a></div>
                       </td>
+                      <td data-label="comosdj">   
+                        <lightning-combobox
+                        options={accountOptions}
+                        onchange={handleSelection}
+                        onmouseover={handleMouseOver}
+                        value={record.Customer_Table_Status__c}
+                        >
+                      </lightning-combobox>
+                    </td >
                       
-                      <td data-label="tableno">
-                        <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Table__r.Name}</a></div>
-                    </td>
+                     
 
                       <td data-label="person">
                         <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Customer__r.No_Of_Persons__c}</a></div>
                       </td>
 
                       <td data-label="tablestatus">
-                        <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.Customer_Table_Status__c}</a></div>
+                        <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Table__c}</a></div>
                       </td>
+
 
                       
                       

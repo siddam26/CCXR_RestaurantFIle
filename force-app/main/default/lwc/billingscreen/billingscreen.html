@@ -19,24 +19,50 @@
   <div class="slds-col">
   <span><lightning-output-field field-name={Table}> </lightning-output-field></span>
   </div>
-  </div>
+ </div>
 
  <lightning-datatable  data={Orderlineitems} 
    columns={columns} 
   key-field="Id">
 
 </lightning-datatable>
-<div class="slds-text-align_right">
-    <p slot="footer">
-                    <b>
-                    <lightning-output-field field-name={grandtotal}> </lightning-output-field> 
-                    <lightning-output-field field-name={Tax}> </lightning-output-field>
-                    <lightning-output-field field-name={Discount}> </lightning-output-field>
-                    <lightning-output-field field-name={Nettotal}> </lightning-output-field></b>
-                </p>
-            </div>
+<lightning-layout >
+
+    <table style="width:25%" align="right">
+      <tbody >
+  
+       <tr>   
+         <td></td> <td></td><td></td>
+          <td><b>Grand Total: </b></td>
+          <td><lightning-output-field field-name={grandtotal} variant="label-hidden" > </lightning-output-field> </td>
+      </tr>
+      <tr>    
+        <td></td> <td></td><td></td>
+      
+        <td><b>Tax: </b></td>
+         <td> <lightning-output-field field-name={Tax} variant="label-hidden" > </lightning-output-field> </td>
+        </tr>
+    <tr>  
+      <td></td> <td></td><td></td>
+   <td><b>Discount: </b></td>
+   <td> <lightning-output-field field-name={Discount} variant="label-hidden" > </lightning-output-field> </td>
+  </tr>
+  <tr>
+    <td></td> <td></td><td></td>
+   <td><b>Net Total: </b></td>
+   <td> <lightning-output-field field-name={Nettotal} variant="label-hidden" > </lightning-output-field> </td>
+  </tr>
+  </tbody>
+  
+  </table>   
+</lightning-layout>
+ 
+
+
+  
 </lightning-record-view-form>
-                        </lightning-card>
-                        
+
+ </lightning-card>
+                 
 
 </template>

@@ -1,8 +1,11 @@
 <template>
 
-    <lightning-card title="Feedback Form">
-    <lightning-card title="Food Quality">
-    <div class="radio-buttons">
+    <lightning-card title="Feedback Form" >
+       
+    <lightning-card title="Food Quality" class="my-card">
+        <div class="my-content">
+    <div class="radio-buttons" style="padding: 10px; background-color: red; font-size: 16px;">
+        
     <template for:each={options1} for:item="option">
         <label key={option.value}>
             &nbsp;&nbsp;
@@ -16,9 +19,9 @@
         
         
     </template>
+</div>
     
-    
-    </div>
+</div>
     </lightning-card>
     
     

@@ -1,0 +1,80 @@
+<template>
+    
+    <lightning-card title='Customer Table' icon-name="custom:custom11">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="customer id">Customer id</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Customer Name">Customer Name</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Table Id">Table Id</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="No Of Persons">No Of Persons</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Customer Status Table">Customer Status Table</div>
+                  </th>
+                  <th>
+
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Assigned to">Assigned to</div>
+                  </th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                <template for:each={records} for:item ='record'>
+                <tr class="" key = {record.Id}>
+                        <td data-label="name">
+                            <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.Name}</a></div>
+                        </td>
+                        <td data-label="cusname">
+                            <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Customer__r.CCXR_Name__c}</a></div>
+                        </td>
+                        
+                        <td data-label="tableno">
+                          <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Table__r.Name}</a></div>
+                      </td>
+  
+                        <td data-label="person">
+                          <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Customer__r.No_Of_Persons__c}</a></div>
+                        </td>
+  
+                        
+                          <td data-label="comosdj">   
+                            <lightning-combobox
+                            options={accountOptions}
+                            onchange={handleSelection}
+                            onmouseover={handleMouseOver}
+                            
+                            >
+                          </lightning-combobox>
+                        
+
+                        </td>
+  
+                        
+                        
+                      
+                        <td data-label="Accept">
+                          <lightning-button
+                              label="Assign"
+                              variant="brand"
+                              onclick={handleButtonClick}
+                              value={record.Id}
+                          ></lightning-button>
+                      </td>
+  
+                        
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+  </template>

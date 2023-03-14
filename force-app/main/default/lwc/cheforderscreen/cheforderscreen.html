@@ -42,6 +42,7 @@
                           options={accountOptions}
                           onchange={handleSelection}
                           onmouseover={handleMouseOver}
+                         
                           value={record.Assignedtochef__c}
                           >
                         </lightning-combobox>
@@ -50,21 +51,21 @@
                       <td data-label="adsssds">
                       
                           <lightning-button
+                              
                               label="Accept"
                               variant="brand"
                               onclick={handleButtonClick}
-                              
                               value={record.Id}
                           ></lightning-button>
                       </td>
                    
-                    
+                     
                       <td data-label="itemstatus">
                         <lightning-button
+                            disabled={buttone1}
                             label="Ready"
                             variant="success"
                             onclick={handleButtonClick11}
-                            
                             value={record.Id}
                         ></lightning-button>
                     </td>

@@ -2,21 +2,24 @@ import { LightningElement,track,wire,api } from 'lwc';
 import getEmpList from '@salesforce/apex/EmployeeData.getEmployeeList';
 import getItmList from '@salesforce/apex/EmployeeData.getItemList';
 
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+
 export default class CcxRestaurantManager extends LightningElement 
 {
     @track error;
     @track empList ;
     @api  itmList;
-    
-    @track showAddItemComponent = false;
-    showComp1() {
-    this.showAddItemComponent = true;
+ 
+    @track isShowModal=false;
+
+    showModalBox() {  
+        this.isShowModal = true;
     }
 
-    @track displayItemComponent = false;
-    showComp2() {
-    this.displayItemComponent = true;
+    hideModalBox() {  
+        this.isShowModal = false;
     }
+
 
     @track showAddEmpComponent = false;
     showComp3() {
@@ -92,4 +95,7 @@ export default class CcxRestaurantManager extends LightningElement
             this.error = error;
         }
     }
+
+
+
 }

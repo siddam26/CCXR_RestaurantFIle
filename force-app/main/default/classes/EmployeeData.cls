@@ -8,19 +8,27 @@ public static List<CCXR_Restaurant_Employee__c> getEmployeeList() {
 }
 @AuraEnabled(cacheable=true)
 public static List<CCXR_Items__c> getItemList() {
-    return [SELECT  id,CCXR_Item_Name__c, CCXR_Price__c, CCXR_Item_Status__c,CCXR_Image__c,CCXR_Description__c
+    return [SELECT  id,CCXR_Item_Name__c, CCXR_Price__c, CCXR_Item_Status__c,CCXR_Image__c,CCXR_Description__c,
+               CCXR_Item_Prep_Time__c,CCXR_Serves__c
              FROM CCXR_Items__c];
 }
 
     @AuraEnabled
     public static void deleteEmp(Id selRecordId)
      {
-   //List<CCXR_Restaurant_Employee__c> delEmp1 = new  List<CCXR_Restaurant_Employee__c>();
-         // CCXR_Restaurant_Employee__c delEmp = new  List<CCXR_Restaurant_Employee__c>();
-          CCXR_Restaurant_Employee__c delEmp = [Select Name,id from CCXR_Restaurant_Employee__c where id=:selRecordId];
+          CCXR_Restaurant_Employee__c delEmp = [Select Name,id from CCXR_Restaurant_Employee__c 
+                                                where id=:selRecordId];
           delete delEmp;
-            
-         // delEmp1 = [Select Name,id from CCXR_Restaurant_Employee__c where id=:selRecordId];
+        
      }
+    @AuraEnabled
+    public static void deleteItems(Id delRecordId)
+     {
+          CCXR_Items__c delitm = [Select Name,id from CCXR_Items__c 
+                                                where id=:delRecordId];
+          delete delitm;
+        
+     }
+
   
 }
