@@ -3,10 +3,14 @@
     <lightning-card>
         
     <!--Add Items-->
-            
+            <div class="p1">
             <lightning-button variant="brand" label="Add Items" onclick={showModalBox} 
-                        class="slds-m-left_x-small"></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+            ></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <lightning-button variant="brand" label="Display Items" onclick={showComp1} 
+            ></lightning-button> 
 
+        </div>
             <template if:true={isShowModal}>
                                   
                     <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" 
@@ -43,29 +47,29 @@
             
 <!--Display Items-->
 
-<lightning-button variant="brand" label="Display Items" onclick={showComp1} 
-              class="slds-m-left_x-small"></lightning-button>   
+  
 <template if:true={showModalBox1}>
-    
+    <div class="backgroundImg" style={getBackgroundImage}>
     <div class="slds-grid slds-wrap">
         <template for:each={itmList} for:item="itm">
             <div key={itm.Id} class="slds-col slds-size_1-of-2 slds-p-around_medium">
-                       
-                <lightning-card icon-name="standard:identifier">
+                   
+                <lightning-card  icon-name="standard:identifier">
                             <p slot="title" >
-                                <b>Name : {itm.CCXR_Item_Name__c}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 
+                                <b>Name : {itm.CCXR_Item_Name__c}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <lightning-button label="Delete Item" variant="destructive-text" 
                                 onclick={handleDelete} value={itm.Id}></lightning-button>
                             </p>
                             <div class="slds-grid slds-no-flex">
                                 &nbsp;&nbsp;
-                                <div class="slds-size_1-of-2"> 
-                                    <b>Image</b>: <img 
+                                <div class="slds-size_1-of-2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <img 
                                              src={itm.Item_Image_Link__c}
                                              alt=" " 
-                                             height="60px" 
-                                             width="100px"/><br/>
+                                             height="100px" 
+                                             width="180px"/><br/>
                              
                                 </div>
                                 <div class="slds-size_1-of-2">
@@ -75,21 +79,25 @@
                                    <!-- <b>Estimation Time </b>: {contact.CCXR_Item_Prep_Time__c}<br>
                                     <b>Serves</b>: {contact.CCXR_Serves__c}<br>-->
                                 </div>  
-                        
+                        <!--:host{
+                          --sds-c-card-color-background: #fad090;
+                         }-->
                             </div>
                             <p slot="footer">
                                 <b>
-                                    Price : <lightning-icon icon-name="utility:moneybag"
+                                    Price : <lightning-icon icon-name="custom:custom17"
                                          alternative-text="Event"
                                         size="xx-small"></lightning-icon>{itm.CCXR_Price__c}
                                 </b>
                             
-                    </p>  
+                            </p>  
                 </lightning-card>
             </div>
-                    
+                
+            
         </template>
     </div>
+   </div>
 </template>  
 
     </lightning-card>

@@ -1,0 +1,89 @@
+<template>
+    <lightning-card>
+    
+      <!--Add Tabless-->
+      <div class="p1">
+            <lightning-button variant="brand" label="Add Table" title="Add Table" onclick={showModalBox}>
+                </lightning-button>
+
+                &ensp;
+                
+                <lightning-button variant="brand" label="Display Tables" onclick={showComp1} >
+    
+                </lightning-button> 
+      </div>
+               <template if:true={isShowModal}>    
+                  <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                     <div class="slds-modal__container">
+  
+                        <!-- popup body  -->
+                        <c-multipletable-creation if:true={isShowModal}></c-multipletable-creation>
+                        <!-- popup footer -->
+                        <footer class="slds-modal__footer">
+                           <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Close</button>
+                        </footer>      
+                     </div>
+                  </section>
+                  <div class="slds-backdrop slds-backdrop_open"></div>
+               </template>
+
+   <!--Display Tabless-->
+                 
+          
+            <template if:true={showModalBox1}>
+               <div class="backgroundImg" style={getBackgroundImage}>
+                  <div class="slds-grid slds-wrap">
+                     <template for:each={getTab} for:item="tab">
+                         <div key={tab.Id} class="slds-col slds-size_1-of-2 slds-p-around_medium">
+            
+                        <lightning-card icon-name="standard:identifier">
+                           <p slot="title" >
+                              <b>Name : {tab.Name}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     
+                                 <lightning-button label="Delete Table" variant="destructive-text" 
+                                    onclick={handleDelete} value={tab.Id}></lightning-button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               <!--<lightning-button label="Edit Table" variant="destructive-text" 
+                                 onclick={handleUpdate} value={tab.Id} >
+                               
+                                 <lightning-datatable if:true={tabless.data} key-field="id" data={tabless.data}
+                                 show-row-number-column hide-checkbox-column columns={tablesCols} onrowaction={handleRowAction}>
+                             </lightning-datatable>
+                              
+                              </lightning-button>-->
+                           </p>
+                           <div class="slds-grid slds-no-flex">
+                                  &nbsp;&nbsp;
+                              <div class="slds-size_1-of-2"> 
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                              <img 
+                                  src={tab.Table_Image_Link__c}
+                                  alt=" " 
+                                  height="60px" 
+                                  width="100px"/><br/>
+                  
+                              </div>
+                              <div class="slds-size_1-of-2">
+                                    <b>Capacity : {tab.CCXR_Capacity__c}</b><br/>
+                                    <b>Employee Name</b>  : {tab.CCXR_Restaurant_Employee__c}<br/>
+                       
+                              </div>  
+             
+                           </div>
+                           <p slot="footer">
+                               <b>
+                                   Status : &nbsp;&nbsp; {tab.CCXR_Table_Status__c}
+                              </b>
+                 
+                           </p>  
+                        </lightning-card>
+                        </div>
+         
+                     </template>
+                  </div>
+               </div>
+            </template>
+        
+   </lightning-card>
+   
+</template>

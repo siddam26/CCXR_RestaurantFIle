@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCXR_Item_Prep_Time__c</fullName>
+    <externalId>false</externalId>
+    <label>CCXR_Item_Prep_Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>10 Min</fullName>
+                <default>true</default>
+                <label>10 Min</label>
+            </value>
+            <value>
+                <fullName>15 Min</fullName>
+                <default>false</default>
+                <label>15 Min</label>
+            </value>
+            <value>
+                <fullName>20 Min</fullName>
+                <default>false</default>
+                <label>20 Min</label>
+            </value>
+            <value>
+                <fullName>25 Min</fullName>
+                <default>false</default>
+                <label>25 Min</label>
+            </value>
+            <value>
+                <fullName>40 Min</fullName>
+                <default>false</default>
+                <label>40 Min</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

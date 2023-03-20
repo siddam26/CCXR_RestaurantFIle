@@ -1,0 +1,59 @@
+<template>
+    <lightning-card>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Feedback ID">Feedback ID</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Customer Name">Customer Name</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Table Id">Table ID </div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Order Id">Order ID </div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Food Quality">Food Quality</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Service Quality">Service Quality</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Suggestions">Suggestions</div>
+                  </th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={records} for:item ='record'>
+                    <tr class="" key = {record.Id}>
+                        <td data-label="feedname">
+                            <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.Name}</a></div>
+                        </td>
+                        <td data-label="cusname">
+                            <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Customer__c}</a></div>
+                        </td>
+                        <td data-label="table">
+                            <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Table__c}</a></div>
+                        </td>
+                        <td data-label="order">
+                            <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Order__r.Name}</a></div>
+                        </td>
+                        <td data-label="food">
+                            <div class="slds-cell-wrap">{record.CCXR_Food_Quality__c}</div>
+                        </td>
+                        <td data-label="service">
+                            <div class="slds-cell-wrap">{record.CCXR_Service_Quality__c}</div>
+                        </td>
+                        <td data-label="sugges">
+                            <div class="slds-cell-wrap">{record.CCXR_Suggestions__c}</div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

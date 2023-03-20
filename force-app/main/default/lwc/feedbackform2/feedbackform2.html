@@ -1,18 +1,39 @@
 <template>
+    <div class="slds-box slds-theme_shade">
+    <lightning-card >
+        <div class="headtitle">
+            <span class="slds-avatar slds-avatar_circle slds-avatar_large">
+            
+            <p data-aura-rendered-by="435:0"> 
+                 <img alt="Person name" src={imageUrl}/>
+                </p>
+            
+            </span> &nbsp;&nbsp;
+            <lightning-formatted-text value="Restaurant Customer Satifaction Survey" class="warning">
 
-    <lightning-card title="Feedback Form" >
+            </lightning-formatted-text>
+        </div>
+        <div class="subtext"><p> <br/>
+            &ensp;&nbsp;
+            Our restaurant pays excellent care and consideration towards providing customers 
+            with best food and table service.<br/>
+            &ensp;&nbsp;
+            We would appreciate your time in providing feedback to our customer satisfaction
+            survey and to serve you better</p></div>
        
-    <lightning-card title="Food Quality" class="my-card">
-        <div class="my-content">
-    <div class="radio-buttons" style="padding: 10px; background-color: red; font-size: 16px;">
+    <lightning-card>
+        <h1 slot="title"><b>Food Quality</b></h1>
+    <div class="radio-buttons" style="padding: 10px; font-size: 17px;" >
         
     <template for:each={options1} for:item="option">
+        &nbsp;
         <label key={option.value}>
             &nbsp;&nbsp;
             <input type="radio"
                     name="radiogp"
                     value={option.value}
-                    onchange={handleChange1}/>
+                    onchange={handleChange1}
+                    class="p"/>
             {option.label}
            
         </label>
@@ -21,26 +42,30 @@
     </template>
 </div>
     
-</div>
     </lightning-card>
     
     
-    <lightning-card title="Service Quality">
-    <div class="radio-buttons" style="padding: 10px;">
+    <lightning-card>
+        <h1 slot="title"><b>Service Quality</b></h1> 
+    <div class="radio-buttons" style="padding: 10px; font-size: 17px;">
     <template for:each={options2} for:item="option">
+        &nbsp;
+        
         <label key={option.value}>
             &nbsp;&nbsp;
             <input type="radio"
                     name="radio-group"
                     value={option.value}
-                    onchange={handleChange2}/>
+                    onchange={handleChange2}
+                    class="p"/>
             {option.label}
         </label>
     </template>
     </div>
     </lightning-card>
-    <lightning-input value={feedback.name} label="CCXR_Table" onchange={handelNamechange}></lightning-input>
-    <lightning-input value={feedback.ord} label="CCXR_Order" onchange={handelorderchange}></lightning-input>
-    <lightning-button label="Submit feedback" onclick={createfeedbackRec} variant="success"></lightning-button>
+    
+
+    <lightning-button  label="Submit feedback" onclick={createfeedbackRec} variant="brand" class="button"></lightning-button>
     </lightning-card>
+    </div>
     </template>

@@ -1,0 +1,8 @@
+.red{
+    --sds-c-icon-color-foreground: white;
+    --sds-c-icon-color-background: red;
+}
+.style1{
+    --sds-c-icon-color-foreground-default: white;
+    --sds-c-icon-color-background: red;
+}

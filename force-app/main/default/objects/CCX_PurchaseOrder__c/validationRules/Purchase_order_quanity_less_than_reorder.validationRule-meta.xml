@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purchase_order_quanity_less_than_reorder</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(P_Quantity__c &lt;= CCX_Product__r.ReorderQty__c)</errorConditionFormula>
+    <errorDisplayField>P_Quantity__c</errorDisplayField>
+    <errorMessage>Purchase Order quanity should not exceed</errorMessage>
+</ValidationRule>

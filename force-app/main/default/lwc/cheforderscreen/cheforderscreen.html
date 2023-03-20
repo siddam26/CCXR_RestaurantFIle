@@ -17,7 +17,13 @@
                     <div class="slds-truncate" title="Order Status">Order Status</div>
                   </th>
                   <th class="" scope="col">
+                    <div class="slds-truncate" title="Order Status">Available chefs</div>
+                  </th>
+                  <th class="" scope="col">
                     <div class="slds-truncate" title="AAssigned to">Assigned to</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="AAssigned to">Quantity</div>
                   </th>
                 
                 </tr>
@@ -35,39 +41,45 @@
                             <div class="slds-cell-wrap">{record.CCXR_Items_ID__r.CCXR_Item_Name__c}</div>
                         </td>
                         <td data-label="itemstatus">
-                            <div class="slds-cell-wrap">{record.Order_status__c}</div>
+                            <div class="slds-cell-wrap"><b class={record.Order_status__c}>{record.Order_status__c}</b></div>
                         </td>
                         <td data-label="comosdj">   
                           <lightning-combobox
                           options={accountOptions}
                           onchange={handleSelection}
                           onmouseover={handleMouseOver}
-                         
-                          value={record.Assignedtochef__c}
                           >
                         </lightning-combobox>
                       </td >
+                      
+                    
+                
+                      <td>{ record.Assignedtochef__r.Name}</td>
+                 
+                    <td data-label="itemname">
+                      <div class="slds-cell-wrap">{record.CCXR_Quantity__c}</div>
+                  </td>
                    
                       <td data-label="adsssds">
-                      
-                          <lightning-button
+                         <lightning-button
                               
                               label="Accept"
                               variant="brand"
                               onclick={handleButtonClick}
                               value={record.Id}
+                              disabled={record.button__c}
                           ></lightning-button>
                       </td>
                    
                      
                       <td data-label="itemstatus">
                         <lightning-button
-                            disabled={buttone1}
                             label="Ready"
                             variant="success"
                             onclick={handleButtonClick11}
                             value={record.Id}
-                        ></lightning-button>
+                            disabled={record.button1__c}
+                            ></lightning-button>
                     </td>
                   
                     </tr>

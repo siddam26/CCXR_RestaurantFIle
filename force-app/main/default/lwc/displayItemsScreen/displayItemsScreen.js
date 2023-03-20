@@ -1,7 +1,7 @@
 import { LightningElement,api,wire,track } from 'lwc';
-import createord from '@salesforce/apex/Ordercreation.createorder';
-import Order_Table from '@salesforce/schema/CCXR_Order__c.CCXR_Customer_Table__c';
-
+import { CurrentPageReference } from 'lightning/navigation';
+import { decodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
+import BackgroundImg from '@salesforce/resourceUrl/logo';
 //1.veg
 import vegStarters from '@salesforce/apex/GetVegItems.vegStarterItems';
 import vegSoups from '@salesforce/apex/GetVegItems.vegSoupItems';
@@ -25,14 +25,33 @@ import Sweets from '@salesforce/apex/GetBeverageItems.sweetItems';
 import { NavigationMixin } from 'lightning/navigation';
 import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 export default class displayItemsScreen extends NavigationMixin(LightningElement) {
-@api recordId;
+    @wire(CurrentPageReference)
+    setCurrentPageRef(pageRef) {
+        alert(pageRef+'pageRef from Item');
+        if (pageRef.state.defaultFieldValues) {
+            
+            const decodedValues = decodeDefaultFieldValues(pageRef.state.defaultFieldValues);
+            console.log(decodedValues);
+            parseInt(decodedValues);
+            alert(decodedValues);
+        }
+    }
+   
 
-//1. Veg Starters
-starters;
+    imageUrl = BackgroundImg;
+
+    get getBackgroundImage(){
+        return `background-image:url("${this.imageUrl}")`;
+    }
+    @api recordId;
+
+    //1. Veg Starters
+    starters;
     @track itemid;
     @api errors;
     @api imageURL;
     @wire(vegStarters,{})
+   
     wiredContacts({ error, data }) {
         if (data) {
             this.starters = data;
@@ -43,42 +62,6 @@ starters;
             console.error=error;
             this.records = undefined;
         }
-    }
-
-    @track japid 
-    @track error
-
-    @track OrdRecord ={
-        CCXR_Customer_Table__c:Order_Table,
-    };
-
-    handleCanChange(event)
-    {
-        
-    }
-    handleClick(event) 
-    {
-        this.itemid=event.target.value;
-        alert('ku');
-        alert(this.itemid);
-        alert('sdsd')
-        
-        createord({japRecobj:this.OrdRecord})
-        .then(result=>{
-            this.OrdRecord={};
-            this.japid=result.Id;
-            window.console.log(this.japid);
-            
-            const toastEvent = new ShowToastEvent({
-                title:'success',
-                message:'Order Record is Created Successfully',
-                variant:'success'
-            });
-            this.dispatchEvent(toastEvent);
-        })
-        .catch(error=>{
-            this.error=error.message;
-        });
     }
 
     //2. Veg Soups

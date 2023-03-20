@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checking_quantity_is_greater_than_0</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNULL( Ord_Quantity__c )</errorConditionFormula>
+    <errorDisplayField>Ord_Quantity__c</errorDisplayField>
+    <errorMessage>Quantity must not be less than 0</errorMessage>
+</ValidationRule>

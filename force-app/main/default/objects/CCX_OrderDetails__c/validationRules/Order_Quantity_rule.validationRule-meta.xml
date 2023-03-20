@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Quantity_rule</fullName>
+    <active>true</active>
+    <errorConditionFormula>Ord_Quantity__c &gt; CCX_Product__r.CurrentQuantity__c</errorConditionFormula>
+    <errorDisplayField>Ord_Quantity__c</errorDisplayField>
+    <errorMessage>Order Quanity Should Not be greater than Current Quantity</errorMessage>
+</ValidationRule>

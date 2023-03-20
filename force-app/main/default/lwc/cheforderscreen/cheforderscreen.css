@@ -1,0 +1,12 @@
+.Pending{
+    color:red;
+}
+.Preparing{
+    color:orange;
+}
+.Ready{
+    color:green;
+}
+.Picked-up{
+    color:blue;
+}

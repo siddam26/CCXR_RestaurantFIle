@@ -1,7 +1,10 @@
 <template>
-    <!--Chef & Waiter-->
+    
+    
+<!--Chef & Waiter-->
     
     <lightning-card class="myClass">
+        <div class="backgroundImg" style={getBackgroundImage}>
         <div class="slds-grid slds-wrap">
             <template if:true={empList}>
             <template for:each={empList} for:item="emp">
@@ -36,6 +39,7 @@
          <template if:true={error}>
             {error}
         </template>
+        </div>
         </div>
     </lightning-card>
 </template>

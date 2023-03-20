@@ -1,0 +1,32 @@
+
+
+  /*:host {
+    --slds-c-button-brand-color-background: #cc7a00;
+    --slds-c-button-brand-color-border: #f4f7f9;
+    
+--slds-c-button-brand-color-hover:var(--slds-c-button-brand-color-background)
+  }*/
+
+  /*lightning-button.button*/
+  .warning
+  {
+    font: italic small-caps normal 1.2rem "URW Chancery L", cursive;
+  }
+  .subtext
+  {
+    
+      font-size: medium;
+      font-style: italic;
+    }
+   
+      
+      
+      .button:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+      }
+      :host {
+        --sds-c-textarea-sizing-min-height: 100px;
+    }
+
+    
+  

@@ -8,8 +8,14 @@
 
        &nbsp;
        
-       <lightning-button variant="brand" label="All Customer"
-                       title="All Customer" onclick={AllCustomer}>
+       <lightning-button variant="brand" label="AssignTable"
+                       title="Assign Table" onclick={AssignTable}>
+       </lightning-button>
+
+       &nbsp;
+       
+       <lightning-button variant="brand" label="All Customer Status"
+                       title="All Customer Status" onclick={AllCustomerStatus}>
        </lightning-button>
        
        <template if:true={customer}>
@@ -17,6 +23,11 @@
          <c-customer-status-table></c-customer-status-table>
 
      </template>
+     <template if:true={customerstatus}>
+        
+      <c-all-Customer-Status></c-all-Customer-Status>
+
+  </template>
 
   <!-- popup start -->      
   <template if:true={isShowModal}>

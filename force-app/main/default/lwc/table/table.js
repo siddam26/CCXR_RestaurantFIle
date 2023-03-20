@@ -18,4 +18,7 @@ export default class Table extends LightningElement
         return this.className ? 'status ' + this.className : 'status'
     }
     
+    handleClick(){
+        
+    }
 }

@@ -2,9 +2,10 @@ import { LightningElement,track,wire,api } from 'lwc';
 import getEmpList from '@salesforce/apex/EmployeeData.getEmployeeList';
 import deleteRecordById from '@salesforce/apex/EmployeeData.deleteEmp';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-
+import BackgroundImg from '@salesforce/resourceUrl/logo2';
 
 export default class CcrRS1 extends LightningElement {
+    imageUrl = BackgroundImg;
     @track error ;
     @track empList;
 
@@ -30,6 +31,10 @@ export default class CcrRS1 extends LightningElement {
            }
        }
 
+       get getBackgroundImage(){
+        return `background-image:url("${this.imageUrl}")`;
+    }
+    
     handleDelete(event) 
     {
         this.drecordId=event.target.value;

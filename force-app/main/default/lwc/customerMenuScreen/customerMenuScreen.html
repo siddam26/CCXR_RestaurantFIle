@@ -1,0 +1,29 @@
+<template>
+    <div class="slds-grid slds-form__row">
+        <lightning-input name="textield" class="slds-col" type="text" label="Customer ID : " value="C-0001" readonly>
+        </lightning-input>
+        <lightning-input name="textield" class="slds-col" type="text" label="Table ID: " value="T-04" readonly>
+        </lightning-input>
+        <lightning-button variant="brand" label="Generate Bill" onclick={generateBill} style="font-size: 20px;"></lightning-button>
+    </div>
+    <lightning-record-view-form
+        object-api-name="CCXR_Customer_Table_Status__c"
+        record-id={recordId}
+    >
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <span><lightning-output-field field-name={Customer}></lightning-output-field></span>
+            </div>
+            <div class="slds-col">
+                <span><lightning-output-field field-name={Table}> </lightning-output-field></span>
+            </div>
+        </div>
+    </lightning-record-view-form>
+    <div class="left">
+        <c-display-items-screen style="height: 300px; width: 200px;"></c-display-items-screen>
+    </div>
+    <div class="right">
+        <c-display-today-special-items></c-display-today-special-items>
+    </div>
+</template>

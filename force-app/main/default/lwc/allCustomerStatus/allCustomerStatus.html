@@ -1,0 +1,65 @@
+<template>
+    
+  <lightning-card title='Customer Table Status' icon-name="custom:custom11">
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+          <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="customer id">Customer id</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Customer Name">Customer Name</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Table Id">Table Id</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="No Of Persons">No Of Persons</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Customer Status ">Customer Status </div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Token Number">Token Number</div>
+                </th>
+              
+              </tr>
+            </thead>
+            <tbody>
+              <template for:each={records} for:item ='record'>
+              <tr class="" key = {record.Id}>
+                <td data-label="name">
+                  <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.Name}</a></div>
+                </td>
+                <td data-label="cusname">
+                  <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Customer__r.CCXR_Name__c}</a></div>
+                </td>
+                <td data-label="person" style="text-align:center">
+                  <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Table__r.Name}</a></div>
+                </td>
+                
+                
+                <td data-label="person" style="text-align:center">
+                  <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Customer__r.No_Of_Persons__c}</a></div>
+                </td>
+               
+                <td data-label="tablestatus" >
+                  <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.Customer_Table_Status__c}</a></div>
+                </td>
+                
+                
+
+                      
+                      
+                    
+                      <td data-label="person" style="text-align:center">
+                          <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.Token_Number__c}</a></div>
+                        </td>
+
+                      
+                  </tr>
+              </template>
+          </tbody>
+      </table>
+  </lightning-card>
+</template>

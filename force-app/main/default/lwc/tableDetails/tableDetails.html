@@ -1,23 +1,24 @@
 <template>
     <lightning-card>
         <template if:true={tables}>
-        <div class="slds-grid slds-wrap">
+            <div class="slds-grid slds-wrap">
             <template for:each={tables} for:item="table">
                 <div key={table.Id} class="slds-col slds-size_1-of-3 slds-p-around_medium">                   
-                    <lightning-card title={table.Name} >                   
-                        <div class="slds-align_absolute-center">
-                            <div class="container">
-                                <div class="text-block">
-                                    <h4>{table.CCXR_Table_Status__c}</h4>
-                                </div>
-                                <img src={table.Table_Image_Link__c} 
+                            
+                    <lightning-card title={table.Name} >                                          
+                        <div class="container">        
+                       <div class="  slds-col slds-size_1-of-10 slds-text-align_right slds-text-title_bold">
+                              <h4 class={table.CCXR_Table_Status__c}>{table.CCXR_Table_Status__c}</h4>                          
+                                </div>                     
+                                <div class="slds-m-around_center">                                                                                                                
+                                    <img src={table.Table_Image_Link__c} 
                                      alt=" " 
                                      height="100px" 
-                                     width="1000px">                               
-                                </div>
-                            </div>
-                    </lightning-card>
-               
+                                     width="1000px">                             
+                                </div>                                                                                                                                                        
+                        </div>                        
+                            
+                    </lightning-card>                  
                 </div>
             </template>
         </div>

@@ -1,0 +1,38 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Item Name">Item Name</div>
+              </th>
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Price">Price</div>
+              </th>
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Quantity">Quantity</div>
+              </th>
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Status">Status</div>
+              </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={records} for:item ='record'>
+                <tr class="" key = {record.Id}>
+                    <td data-label="itemname">
+                        <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Item_Name__c}</a></div>
+                    </td>
+                    <td data-label="price">
+                        <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Price__c}</a></div>
+                    </td>
+                    <td data-label="quantity">
+                        <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Quantity__c}</a></div>
+                    </td>
+                    <td data-label="status">
+                        <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_OrderLineItem_Status__c}</a></div>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</template>

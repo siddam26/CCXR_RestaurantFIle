@@ -2,14 +2,18 @@ import { LightningElement,track,wire,api } from 'lwc';
 import getItmList from '@salesforce/apex/EmployeeData.getItemList';
 import deleteRecordItm from '@salesforce/apex/EmployeeData.deleteItems';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import BackgroundImg from '@salesforce/resourceUrl/logo2';
 
 export default class CcrRS extends LightningElement {
+    imageUrl = BackgroundImg;
+
     @track error;
     @track  itmList;
 
     @api imageURL;
     @api drecordId;
 
+    
     @track isShowModal=false;
     showModalBox() {  
         this.isShowModal = true;
@@ -22,6 +26,7 @@ export default class CcrRS extends LightningElement {
     showComp1() {
         this.showModalBox1 = true;
     }
+    
     
     itmList = [
         { id:'1',label: 'Item Name', fieldName: 'CCXR_Item_Name__c' },
@@ -41,6 +46,9 @@ export default class CcrRS extends LightningElement {
             } else if(error) {
                 this.error = error;
             }
+        }
+        get getBackgroundImage(){
+            return `background-image:url("${this.imageUrl}")`;
         }
     handleDelete(event) 
         {

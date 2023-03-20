@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCX_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>CCX_Product</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>CCX_Product__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Reorder</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>CCX_Product__c</referenceTo>
+    <relationshipLabel>CCX_Purchase Order</relationshipLabel>
+    <relationshipName>CCX_Purchase_Order</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

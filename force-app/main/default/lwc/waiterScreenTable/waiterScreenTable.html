@@ -1,0 +1,84 @@
+<template>
+    
+  <lightning-card title='Waiter Orders' icon-name="custom:custom11">
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+          <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="order id">Order No</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Table No">Table No</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Item Name">Item Name</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Order Status">Order Status</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="AAssigned to">Prepared by</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="AAssigned to">Assigned to</div>
+                </th>
+              
+              </tr>
+            </thead>
+            <tbody>
+              <template for:each={records} for:item ='record'>
+              <tr class="" key = {record.Id}>
+                      <td data-label="odrerno">
+                          <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Order_Id__r.Name}</a></div>
+                      </td>
+                      <td data-label="tableno">
+                          <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Table__c}</a></div>
+                      </td>
+                      <td data-label="itemname">
+                          <div class="slds-cell-wrap">{record.CCXR_Items_ID__r.CCXR_Item_Name__c}</div>
+                      </td>
+                      <td data-label="itemstatus">
+                          <div class="slds-cell-wrap"><b class={record.Order_status__c}>{record.Order_status__c}</b></div>
+                      </td>
+                      <td data-label="Assigned chef">
+                      <div class="slds-cell-wrap"><b class={record.Assignedtochef__c}>{record.Assignedtochef__r.Name}</b></div>
+                     </td>
+                      <td data-label="Assigned Waiter">
+                          <div class="slds-cell-wrap"><b class={record.assigned_waiter__c}>{record.assigned_waiter__c}</b></div>
+                      </td>
+                      <td data-label="comosdj">
+                    </td >
+                 
+                    <td data-label="itemstatus">
+                      <lightning-button
+                          label="PickedUp"
+                          variant="Brand"
+                          onclick={handleButtonClick}
+                          value={record.Id}
+                          disabled={record.button3__c}
+
+
+                          
+                      ></lightning-button>
+                      </td>
+                 
+                   
+                    <td data-label="itemstatus">
+                      <lightning-button
+                          label="Served"
+                          variant="success"
+                          onclick={handleButtonClick11}
+                          value={record.Id}
+                          disabled={record.button4__c}
+
+
+                          
+                      ></lightning-button>
+                  </td>
+                
+                  </tr>
+              </template>
+          </tbody>
+      </table>
+  </lightning-card>
+</template>

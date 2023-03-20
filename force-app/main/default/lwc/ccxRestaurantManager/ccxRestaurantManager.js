@@ -45,13 +45,16 @@ export default class CcxRestaurantManager extends LightningElement
     iconName2;
     iconName3;
     iconName4;
+    iconName5;
+
 
     connectedCallback() {
     this.iconName1 = "standard:home";
     this.iconName2 = "standard:people";
-    this.iconName3 = "utility:table";
+    this.iconName3 = "standard:scan_card";
     this.iconName4 = "standard:contract_line_item";
-  }
+    this.iconName5 = "standard:feedback";
+    }
 
   columns = [
     { id:'1',label: 'Name', fieldName: 'CCXR_Name__c' },

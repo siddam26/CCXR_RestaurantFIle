@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccx_product</fullName>
+    <fields>Product_Name__c</fields>
+    <fields>ReOrderLevel__c</fields>
+    <fields>MinQty__c</fields>
+    <fields>MaxQuantity__c</fields>
+    <label>ccx product</label>
+</CompactLayout>

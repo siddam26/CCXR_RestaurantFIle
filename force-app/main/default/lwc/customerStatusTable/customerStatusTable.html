@@ -17,7 +17,7 @@
                   <div class="slds-truncate" title="No Of Persons">No Of Persons</div>
                 </th>
                 <th class="" scope="col">
-                  <div class="slds-truncate" title="Customer Status Table">Customer Status Table</div>
+                  <div class="slds-truncate" title="Customer Status ">Customer Status </div>
                 </th>
                 <th class="" scope="col">
                   <div class="slds-truncate" title="Assigned to">Assigned to</div>
@@ -39,20 +39,22 @@
                         options={accountOptions}
                         onchange={handleSelection}
                         onmouseover={handleMouseOver}
-                        value={record.Customer_Table_Status__c}
+                        
+                        value={record.CCXR_Table__c}
                         >
                       </lightning-combobox>
                     </td >
                       
                      
 
-                      <td data-label="person">
+                      <td data-label="person" style="text-align:center">
                         <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Customer__r.No_Of_Persons__c}</a></div>
                       </td>
-
-                      <td data-label="tablestatus">
-                        <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.CCXR_Table__c}</a></div>
+                    
+                      <td data-label="tablestatus" >
+                        <div class="slds-cell-wrap"><a href="javascript:void(0);">{record.Customer_Table_Status__c}</a></div>
                       </td>
+                      
 
 
                       

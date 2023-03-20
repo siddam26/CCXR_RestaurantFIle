@@ -9,7 +9,7 @@ import order from '@salesforce/schema/CCXR_Feedback__c.CCXR_Order__c';
 import getfeedback from '@salesforce/apex/feedbackcontroller.feedbackRecMethod';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent'; 
 
-export default class FeedbackForm extends LightningElement 
+export default class FeedbackForm2 extends LightningElement 
 {
     @track options1 = [];
     @track options2 = [];
@@ -18,7 +18,7 @@ export default class FeedbackForm extends LightningElement
     @track name = table;
     @track ord = order;
    
-
+    @track imageUrl='https://commercecx125-dev-ed--c.develop.vf.force.com/resource/1678508119000/finallogo';
     feedback = {
 
         CCXR_Table__c : this.name,

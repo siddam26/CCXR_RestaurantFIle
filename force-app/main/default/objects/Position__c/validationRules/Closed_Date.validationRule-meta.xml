@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Date</fullName>
+    <active>false</active>
+    <errorConditionFormula>(
+  ISBLANK( Close_Date__c  ) 
+  &amp;&amp;   
+  (
+   ISPICKVAL( Status__c , &quot;Closed-Filled&quot;) 
+     || 
+    ISPICKVAL( Status__c , &quot;Closed-Not Approved&quot;)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Close_Date__c</errorDisplayField>
+    <errorMessage>Closed date must be mentioned when the status is closed filled or closed not approved</errorMessage>
+</ValidationRule>

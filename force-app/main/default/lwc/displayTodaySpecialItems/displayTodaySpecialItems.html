@@ -1,0 +1,55 @@
+<template>
+    
+    <template if:true={items}>
+        
+            <lightning-card style="background-color: transparent;">
+                
+                <b><p class="title">Today's Special</p></b>
+                    <div class="slds-grid slds-wrap" style="color: aqua">
+                        <template for:each={items} for:item="item">
+                            <div key={item.Id} class="slds-col
+                                slds-size_1-of-1 slds-p-around_medium">
+                                <lightning-card class="image" 
+                                    title={item.CCXR_Item_Name__c} style="color: black;" variant="border">
+                                    <lightning-button variant="brand"
+                                        label="Add Item" slot="actions" onclick={handleClick} value={item.Id}>
+
+                                    </lightning-button>
+                            
+                                    <div class="slds-grid slds-no-flex">
+                                        <div class="slds-size_1-of-2">
+                                            <p>
+                                                <img
+                                                src={item.Item_Image_Link__c}
+                                                alt=" "
+                                                height="60px"
+                                                width="100px"/>
+                                            </p>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                            <p >
+                                            
+                                                <b>Estimation Time: {item.CCXR_Prearation_Time__c}<br>
+                                                Serves: {item.CCXR_Serves__c}<br>
+                                                Quantity: <lightning-input type="number" name="Quantity" onchange={handleChange1} placeholder="1" style="width:50px" ></lightning-input>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p slot="footer"><b>Price:</b>  <lightning-icon icon-name="utility:moneybag"
+                                        alternative-text="Event"
+                                        size="xx-small"></lightning-icon> <b> {item.CCXR_Price__c}</b>
+
+                                    </p>
+                                    
+                                </lightning-card>
+                            </div>
+                        </template>
+                    </div>
+                
+            </lightning-card>
+    </template>
+    <template if:false={items}>
+        <p>No Items found for this account.</p>
+    </template>
+</template>

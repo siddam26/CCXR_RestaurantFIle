@@ -1,0 +1,17 @@
+.title {
+    animation: blinker 1.5s linear infinite;
+    color: white;
+    font-size: 25px;
+    font-family: sans-serif;
+    text-align: center;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+.backgroundImg{
+    background-position: initial;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgb(84 83 84 / 30%);
+}
